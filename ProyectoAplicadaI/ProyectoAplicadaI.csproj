@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,14 +50,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BLL\ArticulosBLL.cs" />
+    <Compile Include="BLL\ActivodeNegocioBLL.cs" />
+    <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\EntradadeActivosBLL.cs" />
+    <Compile Include="BLL\ReciboBLL.cs" />
+    <Compile Include="BLL\UsuariosBLL.cs" />
+    <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="ENTIDADES\Articulos.cs" />
+    <Compile Include="ENTIDADES\ActivodeNegocio.cs" />
+    <Compile Include="ENTIDADES\Clientes.cs" />
+    <Compile Include="ENTIDADES\EntradadeActivos.cs" />
+    <Compile Include="ENTIDADES\Recibos.cs" />
+    <Compile Include="ENTIDADES\ReciboDetalles.cs" />
+    <Compile Include="ENTIDADES\Usuarios.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\Consulta de Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\Consulta de Clientes.Designer.cs">
+      <DependentUpon>Consulta de Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeArticulos.Designer.cs">
+      <DependentUpon>ConsultadeArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeEntradadeActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeEntradadeActivos.Designer.cs">
+      <DependentUpon>ConsultadeEntradadeActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeRecibos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeRecibos.Designer.cs">
+      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeUsuarios.Designer.cs">
+      <DependentUpon>ConsultadeUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Cuenta\Activos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cuenta\Activos.Designer.cs">
+      <DependentUpon>Activos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeEntradadeActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeEntradadeActivos.Designer.cs">
+      <DependentUpon>RegistrodeEntradadeActivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeRecibo.Designer.cs">
+      <DependentUpon>RegistrodeRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeUsuarios.Designer.cs">
+      <DependentUpon>RegistrodeUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeArticulos.Designer.cs">
+      <DependentUpon>RegistrodeArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RegistrodeClientes.Designer.cs">
+      <DependentUpon>RegistrodeClientes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,6 +152,48 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consultas\Consulta de Clientes.resx">
+      <DependentUpon>Consulta de Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeArticulos.resx">
+      <DependentUpon>ConsultadeArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeEntradadeActivos.resx">
+      <DependentUpon>ConsultadeEntradadeActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeRecibos.resx">
+      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeUsuarios.resx">
+      <DependentUpon>ConsultadeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Cuenta\Activos.resx">
+      <DependentUpon>Activos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrodeEntradadeActivos.resx">
+      <DependentUpon>RegistrodeEntradadeActivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrodeArticulos.resx">
+      <DependentUpon>RegistrodeArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrodeClientes.resx">
+      <DependentUpon>RegistrodeClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrodeRecibo.resx">
+      <DependentUpon>RegistrodeRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RegistrodeUsuarios.resx">
+      <DependentUpon>RegistrodeUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.Articulos.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.CapitaldeNegocios.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.Clientes.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.EntradadeActivos.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.ReciboDetalles.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.Recibos.datasource" />
+    <None Include="Properties\DataSources\ProyectoAplicadaI.ENTIDADES.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -69,6 +203,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

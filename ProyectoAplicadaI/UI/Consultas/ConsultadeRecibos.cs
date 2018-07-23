@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ProyectoAplicadaI
+namespace ProyectoAplicadaI.UI.Consultas
 {
-    public partial class Form1 : Form
+    public partial class ConsultadeRecibos : Form
     {
-        public Form1()
+        public ConsultadeRecibos()
         {
             InitializeComponent();
         }
