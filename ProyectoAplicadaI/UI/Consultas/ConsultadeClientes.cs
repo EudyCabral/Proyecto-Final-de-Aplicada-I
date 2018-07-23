@@ -11,16 +11,17 @@ using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Consultas
 {
-    public partial class ConsultadeUsuarios : Form
+    public partial class ConsultadeClientes : Form
     {
-        public ConsultadeUsuarios()
+        public ConsultadeClientes()
         {
             InitializeComponent();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Expression<Func<Usuarios, bool>> filtro = x => true;
+            
+            Expression<Func<Clientes, bool>> filtro = x => true;
 
             switch (FiltrocomboBox.SelectedIndex)
             {
@@ -40,9 +41,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                     {
                         int id = Convert.ToInt32(CriteriotextBox.Text);
 
-                        filtro = x => x.UsuariosId == id;
+                        filtro = x => x.ClienteId == id;
 
-                        if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -69,10 +70,10 @@ namespace ProyectoAplicadaI.UI.Consultas
                         filtro = x => x.Nombre.Contains(CriteriotextBox.Text);
 
 
-                        if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Nombre, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+
                         }
                     }
 
@@ -80,7 +81,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     break;
 
-                case 2://Usuario
+                case 2://Cedula
 
                     if (Validar(1))
                     {
@@ -94,17 +95,17 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     else
                     {
-                        filtro = x => x.Usuario.Equals(CriteriotextBox.Text);
+                        filtro = x => x.Cedula.Equals(CriteriotextBox.Text);
 
-                        if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Esta Cedula, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+
                         }
                     }
                     break;
 
-                case 3://Contraseña
+                case 3://Telefono
 
                     if (Validar(1))
                     {
@@ -118,19 +119,19 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     else
                     {
+                        
+                        filtro = x => x.Telefono.Equals(CriteriotextBox.Text);
 
-                        filtro = x => x.Contraseña.Equals(CriteriotextBox.Text);
 
-
-                        if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Telefono, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+
                         }
                     }
                     break;
 
-                case 4://TipodeUsuario
+                case 4://Direccion
 
                     if (Validar(1))
                     {
@@ -144,14 +145,14 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     else
                     {
+                       
+                        filtro = x => x.Direccion.Contains(CriteriotextBox.Text);
 
-                        filtro = x => x.Tipodeusuario.Equals(CriteriotextBox.Text);
 
-
-                        if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Esta Direccion, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+
                         }
                     }
 
@@ -162,22 +163,21 @@ namespace ProyectoAplicadaI.UI.Consultas
                 case 5://TODO
                     filtro = x => true;
 
-                    if (BLL.UsuariosBLL.GetList(filtro).Count() == 0)
+                    if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
                     {
                         MessageBox.Show("Lista esta Vacia, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+
                     }
                     break;
             }
 
             if (FiltrocomboBox.SelectedItem != null)
             {
-                UsuariodataGridView.DataSource = BLL.UsuariosBLL.GetList(filtro);
+                ClientesdataGridView.DataSource = BLL.ClienteBLL.GetList(filtro);
                 CriteriotextBox.Clear();
                 GeneralerrorProvider.Clear();
             }
         }
-
         private bool Validar(int error)
         {
             bool paso = false;
@@ -201,11 +201,6 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
 
             return paso;
-        }
-
-        private void UsuariodataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

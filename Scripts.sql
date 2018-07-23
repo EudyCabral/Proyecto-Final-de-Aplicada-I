@@ -12,7 +12,7 @@ CREATE TABLE Clientes
 go
 
 go
-CREATE TABLE Articulos
+create TABLE Articulos
 (			
 
 	   ArticuloId int primary key identity(1,1),
@@ -22,7 +22,8 @@ CREATE TABLE Articulos
 			
 );
 go
-
+insert into Articulos(Nombre,Inventario) Values('Lavadora',0);
+insert into Articulos(Nombre,Inventario) Values('Abanico',0);
 
 go
 create TABLE ActivodeNegocios
@@ -36,16 +37,15 @@ create TABLE ActivodeNegocios
 );
 go
 
-insert into ActivodeNegocios(Nombre,Activo) Values('Activos',0);
+insert into ActivodeNegocios(Nombre,Activo) Values('Activos',75000);
 
 go
-CREATE TABLE Recibos
+create TABLE Recibos
 (			
 
 			ReciboId int primary key identity(1,1),
+			ActivodeNegocioId int,
             Fecha  Date,
-			Articulo varchar(40),
-			Observacion varchar(max),
             MontoTotal money
 
 );
@@ -60,14 +60,16 @@ create TABLE ReciboDetalles
             ReciboId int,
             ClienteId int,
             ArticuloId int,
-			ActivodeNegocioId int,
+			NombredeCliente varchar(30),
             Articulo varchar(40),
             Descripcion varchar(max),
             Cantidad int,
             Monto money,
-            Fecha date,
-            FechaVencimiento date,
-            EstadodelArticulo varchar(10)
+            FechadeEmpeño  date,
+           
+
+			
+         
 );
 go
 
@@ -95,18 +97,22 @@ create table EntradadeActivos
 		);
 go
 
-select *from ActivodeNegocios
+
 Select* from EntradadeActivos
-select *from Articulos
 select *from Clientes
 select *from Usuarios
+
 Select* from ReciboDetalles
 Select* from Recibos
+select *from ActivodeNegocios
+select *from Articulos
 
-truncate table ActivodeNegocio
+
 truncate table EntradadeActivos
-truncate table Articulos
 truncate table Clientes
 truncate table Usuarios
+
 truncate table ReciboDetalles
 truncate table Recibos
+truncate table ActivodeNegocios
+truncate table Articulos

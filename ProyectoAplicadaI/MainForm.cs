@@ -1,4 +1,5 @@
-﻿using ProyectoAplicadaI.UI.Cuenta;
+﻿using ProyectoAplicadaI.UI.Consultas;
+using ProyectoAplicadaI.UI.Cuenta;
 using ProyectoAplicadaI.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,36 @@ namespace ProyectoAplicadaI
             Activos capital = new Activos();
             capital.Show();
 
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadeClientes clientes = new ConsultadeClientes();
+            clientes.Show();
+        }
+
+        private void articulosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultadeArticulos articulos = new ConsultadeArticulos();
+            articulos.Show();
+        }
+
+        private void empeñoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadeRecibos recibos = new ConsultadeRecibos();
+            recibos.Show();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadeUsuarios usuarios = new ConsultadeUsuarios();
+            usuarios.Show();
+        }
+
+        private void entradasDeActivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadeEntradadeActivos activos = new ConsultadeEntradadeActivos();
+            activos.Show();
         }
     }
 }
