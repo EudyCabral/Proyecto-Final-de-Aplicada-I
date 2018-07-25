@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label capitalLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Activos));
             this.activolabel = new System.Windows.Forms.Label();
+            this.updatebutton = new System.Windows.Forms.Button();
             capitalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,14 +54,27 @@
             this.activolabel.Size = new System.Drawing.Size(18, 20);
             this.activolabel.TabIndex = 3;
             this.activolabel.Text = "$";
+          
+            // 
+            // updatebutton
+            // 
+            this.updatebutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Reset_32;
+            this.updatebutton.Location = new System.Drawing.Point(179, 117);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(75, 36);
+            this.updatebutton.TabIndex = 4;
+            this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
             // 
             // Activos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 182);
+            this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.activolabel);
             this.Controls.Add(capitalLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Activos";
             this.Text = "Activo";
             this.Load += new System.EventHandler(this.Capital_Load);
@@ -70,5 +85,6 @@
 
         #endregion
         private System.Windows.Forms.Label activolabel;
+        private System.Windows.Forms.Button updatebutton;
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProyectoAplicadaI.UI.Consultas;
+﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.Consultas;
 using ProyectoAplicadaI.UI.Cuenta;
 using ProyectoAplicadaI.UI.Registros;
 using System;
@@ -17,7 +18,10 @@ namespace ProyectoAplicadaI
         public MainForm()
         {
             InitializeComponent();
+            Nombrelabel.Text = BLL.ReciboBLL.returnUsuario().Nombre;
+            TipodeUsuariolabel.Text = BLL.ReciboBLL.returnUsuario().Tipodeusuario;
         }
+        
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -81,7 +85,7 @@ namespace ProyectoAplicadaI
 
         private void empeñoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultadeRecibos recibos = new ConsultadeRecibos();
+            ConsultadeArticulosEmpeñados recibos = new ConsultadeArticulosEmpeñados();
             recibos.Show();
         }
 
@@ -95,6 +99,17 @@ namespace ProyectoAplicadaI
         {
             ConsultadeEntradadeActivos activos = new ConsultadeEntradadeActivos();
             activos.Show();
+        }
+
+        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

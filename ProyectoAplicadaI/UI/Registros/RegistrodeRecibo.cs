@@ -144,6 +144,7 @@ namespace ProyectoAplicadaI.UI.Registros
             Recibos recibo = new Recibos();
 
             recibo.ReciboId = Convert.ToInt32(reciboIdNumericUpDown.Value);
+            recibo.NombredeCliente = BLL.ClienteBLL.RetornarNombre(clienteIdComboBox.Text);
             recibo.Fecha = fechadeEmpeñoDateTimePicker.Value;
             recibo.ActivodeNegocioId = 1;
             recibo.MontoTotal = Convert.ToDecimal(montoTotalTextBox.Text);

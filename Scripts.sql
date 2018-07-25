@@ -45,6 +45,7 @@ create TABLE Recibos
 
 			ReciboId int primary key identity(1,1),
 			ActivodeNegocioId int,
+			NombredeCliente varchar(30),
             Fecha  Date,
             MontoTotal money
 

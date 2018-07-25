@@ -55,6 +55,7 @@
     <Compile Include="BLL\ClienteBLL.cs" />
     <Compile Include="BLL\EntradadeActivosBLL.cs" />
     <Compile Include="BLL\ReciboBLL.cs" />
+    <Compile Include="BLL\ReciboDetallesBLL.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="DAL\IRepository.cs" />
@@ -66,6 +67,12 @@
     <Compile Include="ENTIDADES\Recibos.cs" />
     <Compile Include="ENTIDADES\ReciboDetalles.cs" />
     <Compile Include="ENTIDADES\Usuarios.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +99,11 @@
     <Compile Include="UI\Consultas\ConsultadeEntradadeActivos.Designer.cs">
       <DependentUpon>ConsultadeEntradadeActivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultadeRecibos.cs">
+    <Compile Include="UI\Consultas\ConsultadeArticulosEmpeñados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Consultas\ConsultadeRecibos.Designer.cs">
-      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    <Compile Include="UI\Consultas\ConsultadeArticulosEmpeñados.Designer.cs">
+      <DependentUpon>ConsultadeArticulosEmpeñados.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\ConsultadeUsuarios.cs">
       <SubType>Form</SubType>
@@ -140,6 +147,9 @@
     <Compile Include="UI\Registros\RegistrodeClientes.Designer.cs">
       <DependentUpon>RegistrodeClientes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +161,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Consultas\ConsultadeClientes.resx">
       <DependentUpon>ConsultadeClientes.cs</DependentUpon>
@@ -161,8 +172,8 @@
     <EmbeddedResource Include="UI\Consultas\ConsultadeEntradadeActivos.resx">
       <DependentUpon>ConsultadeEntradadeActivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Consultas\ConsultadeRecibos.resx">
-      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeArticulosEmpeñados.resx">
+      <DependentUpon>ConsultadeArticulosEmpeñados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultadeUsuarios.resx">
       <DependentUpon>ConsultadeUsuarios.cs</DependentUpon>
@@ -207,6 +218,44 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\icons8_Print_324.png" />
+    <None Include="Resources\icons8_View_327.png" />
+    <None Include="Resources\icons8_Print_323.png" />
+    <None Include="Resources\icons8_View_326.png" />
+    <None Include="Resources\icons8_Print_322.png" />
+    <None Include="Resources\icons8_View_325.png" />
+    <None Include="Resources\icons8_Print_321.png" />
+    <None Include="Resources\icons8_View_324.png" />
+    <None Include="Resources\icons8_View_323.png" />
+    <None Include="Resources\icons8_Print_32.png" />
+    <None Include="Resources\icons8_Reset_32.png" />
+    <None Include="Resources\icons8_Delete_Document_322.png" />
+    <None Include="Resources\icons8_Save_322.png" />
+    <None Include="Resources\icons8_Broom_322.png" />
+    <None Include="Resources\icons8_View_322.png" />
+    <None Include="Resources\icons8_Delete_Document_321.png" />
+    <None Include="Resources\icons8_Save_321.png" />
+    <None Include="Resources\icons8_Broom_321.png" />
+    <None Include="Resources\icons8_Plus_32.png" />
+    <None Include="Resources\icons8_Delete_Document_32.png" />
+    <None Include="Resources\icons8_Save_32.png" />
+    <None Include="Resources\icons8_Broom_32.png" />
+    <None Include="Resources\icons8_View_321.png" />
+    <None Include="Resources\icons8_Bill_32.png" />
+    <None Include="Resources\icons8_View_32.png" />
+    <None Include="Resources\icons8_Form_32.png" />
+    <None Include="Resources\icons8_Low_Price_32.png" />
+    <None Include="Resources\icons8_Customer_32.png" />
+    <None Include="Resources\icons8_Receipt_32.png" />
+    <None Include="Resources\icons8_Washing_Machine_32.png" />
+    <None Include="Resources\icons8_Person_32.png" />
+    <None Include="Resources\icons8_Paper_Money_32.png" />
+    <None Include="Resources\icons8_Bank_32.png" />
+    <None Include="Resources\icons8_Exit_32.png" />
+    <None Include="Resources\icons8_Windows8_32.png" />
+    <None Include="Resources\icons8_Cancel_32.png" />
+    <None Include="Resources\icons8_Login32_32.png" />
+    <None Include="Resources\icons8_Login_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

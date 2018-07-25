@@ -42,8 +42,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (FechacheckBox.Checked == true)
                         {
-                            filtro = x => x.EntradadeActivosId == id && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-                           // filtro = x => x.EntradadeActivosId == id && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
+                            filtro = x => x.EntradadeActivosId == id && (x.Fecha >= DesdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date); 
                         }
                         else
                         {
@@ -79,7 +78,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (FechacheckBox.Checked == true)
                         {
-                            filtro = x => x.Motivo.Contains(CriteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            filtro = x => x.Motivo.Contains(CriteriotextBox.Text) && (x.Fecha >= DesdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
                         }
                         else
                         {
@@ -114,7 +113,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (FechacheckBox.Checked == true)
                         {
-                            filtro = x => x.Suma == suma && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            filtro = x => x.Suma == suma && (x.Fecha >= DesdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
                         }
                         else
                         {

@@ -11,6 +11,19 @@ namespace ProyectoAplicadaI.BLL
 {
     public class ReciboBLL
     {
+        private static Usuarios user = new Usuarios();
+
+        public static void NombreLogin(string nombre,string tipodeusuario)
+        {
+            user.Nombre = nombre;
+            user.Tipodeusuario = tipodeusuario;
+        
+        }
+        public static Usuarios returnUsuario()
+        {
+            return user;
+            
+        }
         public static bool Guardar(Recibos recibo)
         {
             bool paso = false;

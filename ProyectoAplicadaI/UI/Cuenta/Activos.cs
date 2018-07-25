@@ -21,8 +21,18 @@ namespace ProyectoAplicadaI.UI.Cuenta
         {
             ActivodeNegocio activodenegocio = BLL.ActivodeNegocioBLL.Buscar(1);
             activolabel.Text = 0.ToString();
-            activolabel.Text = $"$ {activodenegocio.Activo.ToString()}";
+            activolabel.Text = $"${activodenegocio.Activo.ToString()}";
             activolabel.ForeColor = Color.Green;
         }
+
+        private void updatebutton_Click(object sender, EventArgs e)
+        {
+            ActivodeNegocio activodenegocio = BLL.ActivodeNegocioBLL.Buscar(1);
+            activolabel.Text = 0.ToString();
+            activolabel.Text = $"${activodenegocio.Activo.ToString()}";
+            activolabel.ForeColor = Color.Green;
+        }
+
+     
     }
 }

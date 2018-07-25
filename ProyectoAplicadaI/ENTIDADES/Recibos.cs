@@ -11,6 +11,7 @@ namespace ProyectoAplicadaI.ENTIDADES
         [Key]
         public int ReciboId{ get; set; }
         public int ActivodeNegocioId { get; set; }
+        public string NombredeCliente { get; set; }
         public DateTime Fecha { get; set; }
         public decimal MontoTotal { get; set; }
 
@@ -21,6 +22,7 @@ namespace ProyectoAplicadaI.ENTIDADES
             this.Detalle = new List<ReciboDetalles>();
             ReciboId = 0;
             ActivodeNegocioId = 0;
+            NombredeCliente = string.Empty;
             Fecha = DateTime.Now;
             MontoTotal = 0;
         }
