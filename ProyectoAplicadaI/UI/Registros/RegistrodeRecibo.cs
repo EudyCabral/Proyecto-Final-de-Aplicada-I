@@ -17,6 +17,9 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             InitializeComponent();
             LlenaCombobox();
+
+            nombrelabel.Text = $"{ BLL.ReciboBLL.returnUsuario().Tipodeusuario}: {BLL.ReciboBLL.returnUsuario().Nombre }";
+       
         }
 
         private int ToInt(object valor)

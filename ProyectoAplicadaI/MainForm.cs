@@ -1,4 +1,5 @@
 ﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.Cobro;
 using ProyectoAplicadaI.UI.Consultas;
 using ProyectoAplicadaI.UI.Cuenta;
 using ProyectoAplicadaI.UI.Registros;
@@ -101,15 +102,23 @@ namespace ProyectoAplicadaI
             activos.Show();
         }
 
-        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        
-        }
-
+       
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void cobrosDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CobrosdeEmpeño cobros =new CobrosdeEmpeño();
+            cobros.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,11 @@ namespace ProyectoAplicadaI.UI.Consultas
             InitializeComponent();
         }
 
+        Expression<Func<Clientes, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             
-            Expression<Func<Clientes, bool>> filtro = x => true;
+            
 
             switch (FiltrocomboBox.SelectedIndex)
             {
@@ -201,6 +203,14 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
 
             return paso;
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            ClienteReporte abrir = new ClienteReporte(BLL.ClienteBLL.GetList(filtro));
+            {
+                abrir.Show();
+            }
         }
     }
 }

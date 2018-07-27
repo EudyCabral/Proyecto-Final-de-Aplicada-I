@@ -72,6 +72,9 @@
             // 
             // Iniciarbutton
             // 
+            this.Iniciarbutton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.Iniciarbutton.FlatAppearance.BorderSize = 0;
+            this.Iniciarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Iniciarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Login32_32;
             this.Iniciarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Iniciarbutton.Location = new System.Drawing.Point(68, 116);
@@ -85,6 +88,8 @@
             // 
             // Cancelarbutton
             // 
+            this.Cancelarbutton.FlatAppearance.BorderSize = 0;
+            this.Cancelarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Cancel_32;
             this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Cancelarbutton.Location = new System.Drawing.Point(177, 116);

@@ -32,7 +32,7 @@ namespace ProyectoAplicadaI
                 {
                     BLL.ReciboBLL.NombreLogin(item.Nombre,item.Tipodeusuario);
                 }
-                this.Close();
+                this.Hide();
                 Thread hilo = new Thread(Menu);
                 hilo.Start();
 
