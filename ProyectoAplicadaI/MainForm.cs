@@ -120,5 +120,12 @@ namespace ProyectoAplicadaI
             CobrosdeEmpeño cobros =new CobrosdeEmpeño();
             cobros.Show();
         }
+
+        private void recibosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadeRecibos recibos = new ConsultadeRecibos();
+
+            recibos.Show();
+        }
     }
 }

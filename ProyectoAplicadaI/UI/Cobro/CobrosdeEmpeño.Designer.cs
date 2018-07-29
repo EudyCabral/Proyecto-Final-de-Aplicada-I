@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CobrosdeEmpeño));
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Recibo Id",
             "Nombre"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(58, 3);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(54, 76);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(163, 21);
             this.FiltrocomboBox.TabIndex = 0;
@@ -68,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Location = new System.Drawing.Point(5, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 1;
@@ -77,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 36);
+            this.label2.Location = new System.Drawing.Point(236, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 2;
@@ -85,14 +86,14 @@
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(58, 32);
+            this.CriteriotextBox.Location = new System.Drawing.Point(286, 76);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(163, 20);
             this.CriteriotextBox.TabIndex = 3;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(227, 5);
+            this.Buscarbutton.Location = new System.Drawing.Point(470, 75);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
             this.Buscarbutton.TabIndex = 4;
@@ -105,7 +106,7 @@
             this.FechacheckBox.AutoSize = true;
             this.FechacheckBox.Checked = true;
             this.FechacheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FechacheckBox.Location = new System.Drawing.Point(227, 34);
+            this.FechacheckBox.Location = new System.Drawing.Point(54, 104);
             this.FechacheckBox.Name = "FechacheckBox";
             this.FechacheckBox.Size = new System.Drawing.Size(56, 17);
             this.FechacheckBox.TabIndex = 5;
@@ -115,7 +116,7 @@
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(363, 5);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(54, 122);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.DesdedateTimePicker.TabIndex = 6;
@@ -123,7 +124,7 @@
             // HastadateTimePicker
             // 
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(554, 5);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(245, 122);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.HastadateTimePicker.TabIndex = 7;
@@ -133,7 +134,7 @@
             this.CobrosdataGridView.AllowUserToAddRows = false;
             this.CobrosdataGridView.AllowUserToDeleteRows = false;
             this.CobrosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CobrosdataGridView.Location = new System.Drawing.Point(12, 86);
+            this.CobrosdataGridView.Location = new System.Drawing.Point(8, 160);
             this.CobrosdataGridView.Name = "CobrosdataGridView";
             this.CobrosdataGridView.ReadOnly = true;
             this.CobrosdataGridView.Size = new System.Drawing.Size(747, 275);
@@ -143,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 9);
+            this.label3.Location = new System.Drawing.Point(4, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 10;
@@ -152,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(510, 9);
+            this.label4.Location = new System.Drawing.Point(201, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 11;
@@ -164,7 +165,7 @@
             // 
             // Abrirbutton
             // 
-            this.Abrirbutton.Location = new System.Drawing.Point(12, 367);
+            this.Abrirbutton.Location = new System.Drawing.Point(8, 441);
             this.Abrirbutton.Name = "Abrirbutton";
             this.Abrirbutton.Size = new System.Drawing.Size(75, 23);
             this.Abrirbutton.TabIndex = 12;
@@ -174,7 +175,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 388);
+            this.button1.Location = new System.Drawing.Point(127, 462);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
@@ -183,7 +184,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(264, 388);
+            this.button2.Location = new System.Drawing.Point(260, 462);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
@@ -192,7 +193,7 @@
             // 
             // deudatextBox
             // 
-            this.deudatextBox.Location = new System.Drawing.Point(659, 369);
+            this.deudatextBox.Location = new System.Drawing.Point(655, 443);
             this.deudatextBox.Name = "deudatextBox";
             this.deudatextBox.ReadOnly = true;
             this.deudatextBox.Size = new System.Drawing.Size(100, 20);
@@ -200,7 +201,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(659, 402);
+            this.textBox2.Location = new System.Drawing.Point(655, 476);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 16;
@@ -208,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(615, 373);
+            this.label5.Location = new System.Drawing.Point(611, 447);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 18;
@@ -217,7 +218,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(615, 406);
+            this.label7.Location = new System.Drawing.Point(611, 480);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 20;
@@ -226,16 +227,17 @@
             // fechaActualDateTimePicker
             // 
             this.fechaActualDateTimePicker.Enabled = false;
-            this.fechaActualDateTimePicker.Location = new System.Drawing.Point(559, 36);
+            this.fechaActualDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaActualDateTimePicker.Location = new System.Drawing.Point(585, 76);
             this.fechaActualDateTimePicker.Name = "fechaActualDateTimePicker";
-            this.fechaActualDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaActualDateTimePicker.Size = new System.Drawing.Size(103, 20);
             this.fechaActualDateTimePicker.TabIndex = 21;
             // 
             // CobrosdeEmpeño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 447);
+            this.ClientSize = new System.Drawing.Size(767, 522);
             this.Controls.Add(this.fechaActualDateTimePicker);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -255,6 +257,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FiltrocomboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CobrosdeEmpeño";
             this.Text = "Cobros de Empeño";
             this.Load += new System.EventHandler(this.CobrosdeEmpeño_Load);

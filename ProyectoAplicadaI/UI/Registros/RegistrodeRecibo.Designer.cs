@@ -52,13 +52,14 @@
             this.montoTotalTextBox = new System.Windows.Forms.TextBox();
             this.estadolabel = new System.Windows.Forms.Label();
             this.HayErrores = new System.Windows.Forms.ErrorProvider(this.components);
+            this.nombrelabel = new System.Windows.Forms.Label();
+            this.Recibobutton = new System.Windows.Forms.Button();
             this.Removerbutton = new System.Windows.Forms.Button();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.nombrelabel = new System.Windows.Forms.Label();
             reciboIdLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             fechaVencimientoLabel = new System.Windows.Forms.Label();
@@ -265,6 +266,32 @@
             // 
             this.HayErrores.ContainerControl = this;
             // 
+            // nombrelabel
+            // 
+            this.nombrelabel.AutoSize = true;
+            this.nombrelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombrelabel.Location = new System.Drawing.Point(438, 9);
+            this.nombrelabel.Name = "nombrelabel";
+            this.nombrelabel.Size = new System.Drawing.Size(50, 13);
+            this.nombrelabel.TabIndex = 32;
+            this.nombrelabel.Text = "Nombre";
+            // 
+            // Recibobutton
+            // 
+            this.Recibobutton.Enabled = false;
+            this.Recibobutton.FlatAppearance.BorderSize = 0;
+            this.Recibobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Recibobutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Print_325;
+            this.Recibobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Recibobutton.Location = new System.Drawing.Point(274, 457);
+            this.Recibobutton.Name = "Recibobutton";
+            this.Recibobutton.Size = new System.Drawing.Size(80, 36);
+            this.Recibobutton.TabIndex = 33;
+            this.Recibobutton.Text = "Recibo";
+            this.Recibobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Recibobutton.UseVisualStyleBackColor = true;
+            this.Recibobutton.Click += new System.EventHandler(this.Recibobutton_Click);
+            // 
             // Removerbutton
             // 
             this.Removerbutton.FlatAppearance.BorderSize = 0;
@@ -301,7 +328,7 @@
             this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eliminarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Delete_Document_321;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(312, 457);
+            this.Eliminarbutton.Location = new System.Drawing.Point(377, 457);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 36);
             this.Eliminarbutton.TabIndex = 26;
@@ -316,7 +343,7 @@
             this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Guardarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Save_321;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(199, 457);
+            this.Guardarbutton.Location = new System.Drawing.Point(171, 457);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 36);
             this.Guardarbutton.TabIndex = 25;
@@ -331,7 +358,7 @@
             this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevobutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Broom_321;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(86, 457);
+            this.Nuevobutton.Location = new System.Drawing.Point(68, 457);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 36);
             this.Nuevobutton.TabIndex = 24;
@@ -355,21 +382,12 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // nombrelabel
-            // 
-            this.nombrelabel.AutoSize = true;
-            this.nombrelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombrelabel.Location = new System.Drawing.Point(438, 9);
-            this.nombrelabel.Name = "nombrelabel";
-            this.nombrelabel.Size = new System.Drawing.Size(50, 13);
-            this.nombrelabel.TabIndex = 32;
-            this.nombrelabel.Text = "Nombre";
-            // 
             // RegistrodeRecibo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 504);
+            this.Controls.Add(this.Recibobutton);
             this.Controls.Add(this.nombrelabel);
             this.Controls.Add(this.estadolabel);
             this.Controls.Add(this.Removerbutton);
@@ -431,5 +449,6 @@
         private System.Windows.Forms.Label estadolabel;
         private System.Windows.Forms.ErrorProvider HayErrores;
         private System.Windows.Forms.Label nombrelabel;
+        private System.Windows.Forms.Button Recibobutton;
     }
 }

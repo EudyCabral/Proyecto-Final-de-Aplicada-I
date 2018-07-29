@@ -1,5 +1,6 @@
 ﻿using ProyectoAplicadaI.DAL;
 using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,7 +97,6 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             DetalledataGridView.Columns["ID"].Visible = false;
             DetalledataGridView.Columns["ReciboId"].Visible = false;
-            DetalledataGridView.Columns["ClienteId"].Visible = false;
             DetalledataGridView.Columns["ArticuloId"].Visible = false;
             DetalledataGridView.Columns["articulos"].Visible = false;
 
@@ -127,6 +127,7 @@ namespace ProyectoAplicadaI.UI.Registros
             montoTextBox.Clear();
             montoTotalTextBox.Clear();
             DetalledataGridView.DataSource = null;
+            Recibobutton.Enabled = false;
             HayErrores.Clear();
         }
 
@@ -139,7 +140,7 @@ namespace ProyectoAplicadaI.UI.Registros
             montoTextBox.Clear();
             HayErrores.Clear();
         }
-
+        
 
 
         private Recibos LlenaClase()
@@ -147,6 +148,7 @@ namespace ProyectoAplicadaI.UI.Registros
             Recibos recibo = new Recibos();
 
             recibo.ReciboId = Convert.ToInt32(reciboIdNumericUpDown.Value);
+            recibo.ClienteId = Convert.ToInt32(clienteIdComboBox.SelectedValue);
             recibo.NombredeCliente = BLL.ClienteBLL.RetornarNombre(clienteIdComboBox.Text);
             recibo.Fecha = fechadeEmpeñoDateTimePicker.Value;
             recibo.ActivodeNegocioId = 1;
@@ -162,9 +164,7 @@ namespace ProyectoAplicadaI.UI.Registros
                 recibo.AgregarDetalle
                     (ToInt(item.Cells["iD"].Value),
                      recibo.ReciboId,
-                       ToInt(item.Cells["clienteId"].Value),
                      ToInt(item.Cells["articuloId"].Value), 
-                     Convert.ToString(item.Cells["nombredeCliente"].Value),
                       Convert.ToString(item.Cells["articulo"].Value),
                       Convert.ToString(item.Cells["descripcion"].Value),
                        ToInt(item.Cells["cantidad"].Value),
@@ -183,13 +183,11 @@ namespace ProyectoAplicadaI.UI.Registros
 
             reciboIdNumericUpDown.Value = recibos.ReciboId;
             fechadeEmpeñoDateTimePicker.Value = recibos.Fecha;
+            clienteIdComboBox.Text = recibos.NombredeCliente;
             montoTotalTextBox.Text = recibos.MontoTotal.ToString();
 
 
-
             //Cargar el detalle al Grid
-
-         
             DetalledataGridView.DataSource = recibos.Detalle;
             NoColumnas();
 
@@ -240,16 +238,6 @@ namespace ProyectoAplicadaI.UI.Registros
                     detalle = (List<ReciboDetalles>)DetalledataGridView.DataSource;
                 }
 
-                //Agregar un nuevo detalle con los datos introducidos.
-
-                /*     foreach (var item in BLL.RegistrodeArticulosBLL.GetList(x => x.Inventario < cantidadNumericUpDown.Value))
-                     {
-
-                         MessageBox.Show("No hay esa Existencia para Vender ", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                         return;
-                     }
-                     */
-
 
                 if (string.IsNullOrEmpty(montoTextBox.Text) && string.IsNullOrEmpty(cantidadNumericUpDown.Text))
                 {
@@ -261,9 +249,7 @@ namespace ProyectoAplicadaI.UI.Registros
                     detalle.Add(
                         new ReciboDetalles(iD: 0,
                         reciboId: (int)Convert.ToInt32(reciboIdNumericUpDown.Value),
-                        clienteId: (int)clienteIdComboBox.SelectedValue,
                            articuloId: (int)articuloIdComboBox.SelectedValue,
-                           nombredeCliente:(string)BLL.ClienteBLL.RetornarNombre(clienteIdComboBox.Text),
                                 articulo: (string)BLL.ArticulosBLL.RetornarNombre(articuloIdComboBox.Text),
                                 descripcion: (string)descripcionTextBox.Text,
                             cantidad: (int)Convert.ToInt32(cantidadNumericUpDown.Value),
@@ -397,9 +383,11 @@ namespace ProyectoAplicadaI.UI.Registros
                 //Informar el resultado
                 if (Paso)
                 {
-                    Limpiar();
+                    
                     MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Recibobutton.Enabled = true;
                 }
                 else
                     MessageBox.Show("No se pudo guardar!!", "Fallo",
@@ -442,6 +430,20 @@ namespace ProyectoAplicadaI.UI.Registros
             else
                 MessageBox.Show("No se encontro!", "Fallo",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void Recibobutton_Click(object sender, EventArgs e)
+        {
+            List<Recibos> list = BLL.ReciboBLL.GetList(X=> true);
+
+            List<Recibos> nuevo = new List<Recibos>();
+
+            nuevo.Add( list.Last()); 
+            // return 
+            VentanaReciboReporte abrir = new VentanaReciboReporte(nuevo);
+            abrir.Show();
+
+
         }
     }
 }

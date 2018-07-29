@@ -52,7 +52,7 @@
             this.FechacheckBox.AutoSize = true;
             this.FechacheckBox.Checked = true;
             this.FechacheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FechacheckBox.Location = new System.Drawing.Point(423, 11);
+            this.FechacheckBox.Location = new System.Drawing.Point(50, 35);
             this.FechacheckBox.Name = "FechacheckBox";
             this.FechacheckBox.Size = new System.Drawing.Size(56, 17);
             this.FechacheckBox.TabIndex = 40;
@@ -62,7 +62,7 @@
             // HastadateTimePicker
             // 
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(710, 9);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(240, 62);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(168, 20);
             this.HastadateTimePicker.TabIndex = 39;
@@ -70,7 +70,7 @@
             // desdedateTimePicker
             // 
             this.desdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.desdedateTimePicker.Location = new System.Drawing.Point(520, 10);
+            this.desdedateTimePicker.Location = new System.Drawing.Point(50, 63);
             this.desdedateTimePicker.Name = "desdedateTimePicker";
             this.desdedateTimePicker.Size = new System.Drawing.Size(121, 20);
             this.desdedateTimePicker.TabIndex = 38;
@@ -78,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(666, 12);
+            this.label4.Location = new System.Drawing.Point(196, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 37;
@@ -87,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(479, 12);
+            this.label3.Location = new System.Drawing.Point(9, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 36;
@@ -98,7 +98,7 @@
             this.RecibodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RecibodataGridView.Location = new System.Drawing.Point(12, 88);
             this.RecibodataGridView.Name = "RecibodataGridView";
-            this.RecibodataGridView.Size = new System.Drawing.Size(931, 302);
+            this.RecibodataGridView.Size = new System.Drawing.Size(745, 302);
             this.RecibodataGridView.TabIndex = 34;
             // 
             // CriteriotextBox
@@ -132,13 +132,11 @@
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "ReciboId",
-            "ClienteId ",
             "ArticuloId ",
-            "Articulo",
+            "Nombre del Articulo",
             "Descripcion ",
             "Cantidad",
             "Monto",
-            "NombredeCliente",
             "Todo"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(50, 8);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
@@ -162,6 +160,7 @@
             this.Imprimirbutton.Text = "Reporte";
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -169,7 +168,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_View_324;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(12, 35);
+            this.Buscarbutton.Location = new System.Drawing.Point(414, 8);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 48);
             this.Buscarbutton.TabIndex = 33;
@@ -182,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 450);
+            this.ClientSize = new System.Drawing.Size(761, 450);
             this.Controls.Add(this.FechacheckBox);
             this.Controls.Add(this.HastadateTimePicker);
             this.Controls.Add(this.desdedateTimePicker);

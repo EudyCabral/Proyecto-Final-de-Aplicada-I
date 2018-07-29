@@ -218,7 +218,11 @@ namespace ProyectoAplicadaI.BLL
             try
             {
                 recibo = contexto.recibos.Where(expression).ToList();
-
+               
+                foreach (var item in recibo)
+                {
+                    item.Detalle.Count();
+                }
                 contexto.Dispose();
             }
             catch (Exception) { throw; }
@@ -227,5 +231,13 @@ namespace ProyectoAplicadaI.BLL
         }
 
 
+        public static Recibos BusquedaUltimoElemento()
+        {
+           
+            List<Recibos> list = new List<Recibos>();
+
+
+            return list.Last();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,10 @@ namespace ProyectoAplicadaI.UI.Consultas
         {
             InitializeComponent();
         }
-
+        Expression<Func<Usuarios, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Expression<Func<Usuarios, bool>> filtro = x => true;
+           
 
             switch (FiltrocomboBox.SelectedIndex)
             {
@@ -206,6 +207,22 @@ namespace ProyectoAplicadaI.UI.Consultas
         private void UsuariodataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+
+            if (UsuariodataGridView.DataSource != null)
+            {
+
+                UsuarioReporte abrir = new UsuarioReporte(BLL.UsuariosBLL.GetList(filtro));
+                abrir.Show();
+            }
+            else
+            {
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                return;
+            }
         }
     }
 }

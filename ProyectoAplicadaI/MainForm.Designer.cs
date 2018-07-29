@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Nombrelabel = new System.Windows.Forms.Label();
-            this.TipodeUsuariolabel = new System.Windows.Forms.Label();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +41,17 @@
             this.reciboDeEmpeñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobrosDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empeñoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasDeActivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cobroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cobrosDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Nombrelabel = new System.Windows.Forms.Label();
+            this.TipodeUsuariolabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,26 +69,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // Nombrelabel
-            // 
-            this.Nombrelabel.AutoSize = true;
-            this.Nombrelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombrelabel.Location = new System.Drawing.Point(12, 24);
-            this.Nombrelabel.Name = "Nombrelabel";
-            this.Nombrelabel.Size = new System.Drawing.Size(63, 16);
-            this.Nombrelabel.TabIndex = 1;
-            this.Nombrelabel.Text = "Nombre";
-            // 
-            // TipodeUsuariolabel
-            // 
-            this.TipodeUsuariolabel.AutoSize = true;
-            this.TipodeUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipodeUsuariolabel.Location = new System.Drawing.Point(33, 46);
-            this.TipodeUsuariolabel.Name = "TipodeUsuariolabel";
-            this.TipodeUsuariolabel.Size = new System.Drawing.Size(21, 13);
-            this.TipodeUsuariolabel.TabIndex = 2;
-            this.TipodeUsuariolabel.Text = "ad";
-            // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -100,16 +81,17 @@
             // 
             // cerrarSesionToolStripMenuItem
             // 
+            this.cerrarSesionToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Exit_321;
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Exit_32;
+            this.salirToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Cancel_321;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -183,6 +165,23 @@
             this.entradaDeActivosToolStripMenuItem.Text = "Entrada de Activos";
             this.entradaDeActivosToolStripMenuItem.Click += new System.EventHandler(this.entradaDeActivosToolStripMenuItem_Click);
             // 
+            // cobroToolStripMenuItem
+            // 
+            this.cobroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cobrosDeArticulosToolStripMenuItem});
+            this.cobroToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Cash_Register_32;
+            this.cobroToolStripMenuItem.Name = "cobroToolStripMenuItem";
+            this.cobroToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.cobroToolStripMenuItem.Text = "Cobros";
+            // 
+            // cobrosDeArticulosToolStripMenuItem
+            // 
+            this.cobrosDeArticulosToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Payment_History_32;
+            this.cobrosDeArticulosToolStripMenuItem.Name = "cobrosDeArticulosToolStripMenuItem";
+            this.cobrosDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.cobrosDeArticulosToolStripMenuItem.Text = "Pago de Articulos Empeñados";
+            this.cobrosDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.cobrosDeArticulosToolStripMenuItem_Click);
+            // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -190,7 +189,8 @@
             this.articulosToolStripMenuItem1,
             this.empeñoToolStripMenuItem,
             this.usuarioToolStripMenuItem,
-            this.entradasDeActivoToolStripMenuItem});
+            this.entradasDeActivoToolStripMenuItem,
+            this.recibosToolStripMenuItem});
             this.consultaToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_View_32;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
@@ -236,25 +236,41 @@
             this.entradasDeActivoToolStripMenuItem.Text = "Entradas de Activo";
             this.entradasDeActivoToolStripMenuItem.Click += new System.EventHandler(this.entradasDeActivoToolStripMenuItem_Click);
             // 
-            // cobroToolStripMenuItem
+            // recibosToolStripMenuItem
             // 
-            this.cobroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cobrosDeArticulosToolStripMenuItem});
-            this.cobroToolStripMenuItem.Name = "cobroToolStripMenuItem";
-            this.cobroToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.cobroToolStripMenuItem.Text = "Cobros";
+            this.recibosToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Bill_322;
+            this.recibosToolStripMenuItem.Name = "recibosToolStripMenuItem";
+            this.recibosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.recibosToolStripMenuItem.Text = "Recibos";
+            this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
             // 
-            // cobrosDeArticulosToolStripMenuItem
+            // Nombrelabel
             // 
-            this.cobrosDeArticulosToolStripMenuItem.Name = "cobrosDeArticulosToolStripMenuItem";
-            this.cobrosDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.cobrosDeArticulosToolStripMenuItem.Text = "Articulos Empeñados";
-            this.cobrosDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.cobrosDeArticulosToolStripMenuItem_Click);
+            this.Nombrelabel.AutoSize = true;
+            this.Nombrelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombrelabel.Location = new System.Drawing.Point(33, 24);
+            this.Nombrelabel.Name = "Nombrelabel";
+            this.Nombrelabel.Size = new System.Drawing.Size(63, 16);
+            this.Nombrelabel.TabIndex = 1;
+            this.Nombrelabel.Text = "Nombre";
+            // 
+            // TipodeUsuariolabel
+            // 
+            this.TipodeUsuariolabel.AutoSize = true;
+            this.TipodeUsuariolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipodeUsuariolabel.Location = new System.Drawing.Point(33, 46);
+            this.TipodeUsuariolabel.Name = "TipodeUsuariolabel";
+            this.TipodeUsuariolabel.Size = new System.Drawing.Size(21, 13);
+            this.TipodeUsuariolabel.TabIndex = 2;
+            this.TipodeUsuariolabel.Text = "ad";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::ProyectoAplicadaI.Properties.Resources.Casa_de_EMPENO;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(512, 270);
             this.Controls.Add(this.TipodeUsuariolabel);
             this.Controls.Add(this.Nombrelabel);
@@ -297,6 +313,7 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobrosDeArticulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recibosToolStripMenuItem;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,12 @@ namespace ProyectoAplicadaI.UI.Consultas
             InitializeComponent();
         }
 
+        Expression<Func<ReciboDetalles, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
            
 
-            Expression<Func<ReciboDetalles, bool>> filtro = x => true;
+            
 
             switch (FiltrocomboBox.SelectedIndex)
             {
@@ -65,42 +67,8 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     break;
 
-                case 1://ClienteId 
-
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        int id = Convert.ToInt32(CriteriotextBox.Text);
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.ClienteId == id && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
-                            filtro = x => x.ClienteId == id;
-                        }
-
-                        
-                       
-
-                        if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-                    break;
-
-                case 2:// ArticuloId 
+            
+                case 1:// ArticuloId 
 
                     if (Validar(1))
                     {
@@ -133,7 +101,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     break;
 
-                case 3://NombreArticulo
+                case 2://NombreArticulo
 
                     if (Validar(1))
                     {
@@ -169,7 +137,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     break;
 
-                case 4://Descripcion
+                case 3://Descripcion
 
                     if (Validar(1))
                     {
@@ -205,7 +173,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     break;
 
-                case 5:// Cantidad
+                case 4:// Cantidad
 
                     if (Validar(1))
                     {
@@ -243,7 +211,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     break;
 
-                case 6:// Monto
+                case 5:// Monto
 
                     if (Validar(1))
                     {
@@ -281,44 +249,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     break;
 
         
-                case 7://  NombredeCliente
-
-
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(3))
-                    {
-                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        
-                        
-
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.NombredeCliente.Equals(CriteriotextBox.Text) && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
-                            filtro = x => x.NombredeCliente.Equals(CriteriotextBox.Text);
-                        }
-
-                        if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-
-
-
-                    break;
-                case 8://TODO
+                case 6://TODO
                     filtro = x => true;
 
                     if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
@@ -336,6 +267,8 @@ namespace ProyectoAplicadaI.UI.Consultas
                 GeneralerrorProvider.Clear();
                 RecibodataGridView.Columns["articulos"].Visible = false;
                 RecibodataGridView.Columns["ID"].Visible = false;
+          
+
             }
 
 
@@ -370,6 +303,22 @@ namespace ProyectoAplicadaI.UI.Consultas
         private void ConsultadeRecibos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (RecibodataGridView.DataSource != null)
+            {
+
+                VentanaArticulosdelAlmacen abrir = new
+                VentanaArticulosdelAlmacen(BLL.ReciboDetallesBLL.GetList(filtro));
+                abrir.Show();
+            }
+            else
+            {
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                return;
+            }
         }
     }
 }

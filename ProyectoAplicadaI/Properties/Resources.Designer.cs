@@ -63,6 +63,16 @@ namespace ProyectoAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Casa_de_EMPENO {
+            get {
+                object obj = ResourceManager.GetObject("Casa de EMPENO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Bank_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Bank_32", resourceCulture);
@@ -76,6 +86,26 @@ namespace ProyectoAplicadaI.Properties {
         internal static System.Drawing.Bitmap icons8_Bill_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Bill_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Bill_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Bill_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Bill_322 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Bill_322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +146,26 @@ namespace ProyectoAplicadaI.Properties {
         internal static System.Drawing.Bitmap icons8_Cancel_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Cancel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Cancel_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Cancel_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Cash_Register_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Cash_Register_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +223,16 @@ namespace ProyectoAplicadaI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Exit_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Exit_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Form_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Form_32", resourceCulture);
@@ -216,6 +276,16 @@ namespace ProyectoAplicadaI.Properties {
         internal static System.Drawing.Bitmap icons8_Paper_Money_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Paper_Money_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Payment_History_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Payment_History_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +356,16 @@ namespace ProyectoAplicadaI.Properties {
         internal static System.Drawing.Bitmap icons8_Print_324 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Print_324", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Print_325 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Print_325", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +516,26 @@ namespace ProyectoAplicadaI.Properties {
         internal static System.Drawing.Bitmap icons8_Windows8_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_Windows8_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login {
+            get {
+                object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login1 {
+            get {
+                object obj = ResourceManager.GetObject("Login1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

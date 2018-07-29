@@ -1,4 +1,5 @@
 ﻿using ProyectoAplicadaI.ENTIDADES;
+using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,10 @@ namespace ProyectoAplicadaI.UI.Consultas
             InitializeComponent();
         }
 
+        Expression<Func<Articulos, bool>> filtro = x => true;
+
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-
-            Expression<Func<Articulos, bool>> filtro = x => true;
 
             switch (FiltrocomboBox.SelectedIndex)
             {
@@ -103,13 +104,14 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     break;
 
-                case 3:
+                case 3://todo
+                    
+                    filtro = x => true;
                     if (BLL.ArticulosBLL.GetList(filtro).Count() == 0)
                     {
                         MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    filtro = x => true;
                     break;
 
               
@@ -150,6 +152,24 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
 
             return paso;
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            
+
+            if (ArticulosdataGridView.DataSource != null)
+            {
+                ArticulosReporte abrir = new ArticulosReporte(BLL.ArticulosBLL.GetList(filtro));
+                {
+                    abrir.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                return;
+            }
         }
     }
 }

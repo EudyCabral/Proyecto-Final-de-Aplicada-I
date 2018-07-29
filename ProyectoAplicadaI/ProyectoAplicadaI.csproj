@@ -60,6 +60,7 @@
     <Compile Include="BLL\ArticulosBLL.cs" />
     <Compile Include="BLL\ActivodeNegocioBLL.cs" />
     <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\CobroBLL.cs" />
     <Compile Include="BLL\EntradadeActivosBLL.cs" />
     <Compile Include="BLL\ReciboBLL.cs" />
     <Compile Include="BLL\ReciboDetallesBLL.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ENTIDADES\ActivodeNegocio.cs" />
     <Compile Include="ENTIDADES\Clientes.cs" />
     <Compile Include="ENTIDADES\EntradadeActivos.cs" />
+    <Compile Include="ENTIDADES\Cobro.cs" />
     <Compile Include="ENTIDADES\Recibos.cs" />
     <Compile Include="ENTIDADES\ReciboDetalles.cs" />
     <Compile Include="ENTIDADES\Usuarios.cs" />
@@ -118,6 +120,12 @@
     <Compile Include="UI\Consultas\ConsultadeArticulosEmpeñados.Designer.cs">
       <DependentUpon>ConsultadeArticulosEmpeñados.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\ConsultadeRecibos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultadeRecibos.Designer.cs">
+      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\ConsultadeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,17 +168,89 @@
     <Compile Include="UI\Registros\RegistrodeClientes.Designer.cs">
       <DependentUpon>RegistrodeClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ListadeRecibos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadeRecibos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteArticulos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteArticulos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReportedeArticulosEmpeñados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportedeArticulosEmpeñados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteEntradadeActivo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEntradadeActivo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ReporteRecibo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteRecibo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\RepoteClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepoteClientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\Reportes\ReporteUsuarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteUsuarios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\ArticulosReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\ArticulosReporte.Designer.cs">
+      <DependentUpon>ArticulosReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\VentanasReportes\ClienteReporte.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\VentanasReportes\ClienteReporte.Designer.cs">
       <DependentUpon>ClienteReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\UsuarioReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\UsuarioReporte.Designer.cs">
+      <DependentUpon>UsuarioReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanaArticulosdelAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanaArticulosdelAlmacen.Designer.cs">
+      <DependentUpon>VentanaArticulosdelAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanadeListadeRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanadeListadeRecibo.Designer.cs">
+      <DependentUpon>VentanadeListadeRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\ventanaEntradaReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\ventanaEntradaReportes.Designer.cs">
+      <DependentUpon>ventanaEntradaReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanaReciboReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VentanasReportes\VentanaReciboReporte.Designer.cs">
+      <DependentUpon>VentanaReciboReporte.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -203,6 +283,9 @@
     <EmbeddedResource Include="UI\Consultas\ConsultadeArticulosEmpeñados.resx">
       <DependentUpon>ConsultadeArticulosEmpeñados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\ConsultadeRecibos.resx">
+      <DependentUpon>ConsultadeRecibos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\ConsultadeUsuarios.resx">
       <DependentUpon>ConsultadeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,12 +307,54 @@
     <EmbeddedResource Include="UI\Registros\RegistrodeUsuarios.resx">
       <DependentUpon>RegistrodeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadeRecibos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadeRecibos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteArticulos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteArticulos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReportedeArticulosEmpeñados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportedeArticulosEmpeñados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteEntradadeActivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEntradadeActivo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteRecibo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteRecibo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\RepoteClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RepoteClientes.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ReporteUsuarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteUsuarios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\ArticulosReporte.resx">
+      <DependentUpon>ArticulosReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\VentanasReportes\ClienteReporte.resx">
       <DependentUpon>ClienteReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\UsuarioReporte.resx">
+      <DependentUpon>UsuarioReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\VentanaArticulosdelAlmacen.resx">
+      <DependentUpon>VentanaArticulosdelAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\VentanadeListadeRecibo.resx">
+      <DependentUpon>VentanadeListadeRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\ventanaEntradaReportes.resx">
+      <DependentUpon>ventanaEntradaReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VentanasReportes\VentanaReciboReporte.resx">
+      <DependentUpon>VentanaReciboReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -255,6 +380,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\icons8_Cancel_321.png" />
+    <None Include="Resources\icons8_Exit_321.png" />
+    <None Include="Resources\icons8_Payment_History_32.png" />
+    <None Include="Resources\icons8_Bill_322.png" />
+    <None Include="Resources\icons8_Cash_Register_32.png" />
+    <None Include="Resources\Casa de EMPENO.png" />
+    <None Include="Resources\Login1.png" />
+    <None Include="Resources\Login.png" />
+    <None Include="Resources\icons8_Bill_321.png" />
+    <None Include="Resources\icons8_Print_325.png" />
     <None Include="Resources\icons8_Print_324.png" />
     <None Include="Resources\icons8_View_327.png" />
     <None Include="Resources\icons8_Print_323.png" />

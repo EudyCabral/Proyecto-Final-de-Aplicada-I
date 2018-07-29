@@ -11,6 +11,7 @@ namespace ProyectoAplicadaI.ENTIDADES
         [Key]
         public int ReciboId{ get; set; }
         public int ActivodeNegocioId { get; set; }
+        public int ClienteId { get; set; }
         public string NombredeCliente { get; set; }
         public DateTime Fecha { get; set; }
         public decimal MontoTotal { get; set; }
@@ -22,14 +23,15 @@ namespace ProyectoAplicadaI.ENTIDADES
             this.Detalle = new List<ReciboDetalles>();
             ReciboId = 0;
             ActivodeNegocioId = 0;
+            ClienteId = 0;
             NombredeCliente = string.Empty;
             Fecha = DateTime.Now;
             MontoTotal = 0;
         }
 
-        public void AgregarDetalle(int iD, int reciboId, int clienteId, int articuloId, string nombredeCliente,string articulo, string descripcion, int cantidad, decimal monto, DateTime fechadeEmpeño)
+        public void AgregarDetalle(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto, DateTime fechadeEmpeño)
         {
-            Detalle.Add(new ReciboDetalles(iD,reciboId, clienteId, articuloId, nombredeCliente,articulo, descripcion, cantidad, monto, fechadeEmpeño));
+            Detalle.Add(new ReciboDetalles(iD,reciboId,articuloId,articulo, descripcion, cantidad, monto, fechadeEmpeño));
         }
 
     }

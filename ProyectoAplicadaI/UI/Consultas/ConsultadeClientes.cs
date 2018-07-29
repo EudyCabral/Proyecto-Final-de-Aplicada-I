@@ -20,6 +20,7 @@ namespace ProyectoAplicadaI.UI.Consultas
         }
 
         Expression<Func<Clientes, bool>> filtro = x => true;
+
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             
@@ -207,10 +208,25 @@ namespace ProyectoAplicadaI.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-            ClienteReporte abrir = new ClienteReporte(BLL.ClienteBLL.GetList(filtro));
+            
+
+            if (ClientesdataGridView.DataSource != null)
             {
-                abrir.Show();
+                ClienteReporte abrir = new ClienteReporte(BLL.ClienteBLL.GetList(filtro));
+                {
+                    abrir.Show();
+                }
             }
+            else
+            {
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                return;
+            }
+        }
+
+        private void ConsultadeClientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

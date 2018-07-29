@@ -140,6 +140,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultadeClientes";
             this.Text = "Consulta de Clientes";
+            this.Load += new System.EventHandler(this.ConsultadeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).EndInit();
             this.ResumeLayout(false);

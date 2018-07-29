@@ -33,6 +33,31 @@ namespace ProyectoAplicadaI.BLL
         }
 
 
+
+
+        public static bool Editar(ActivodeNegocio capitaldenegocio)
+        {
+
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                contexto.Entry(capitaldenegocio).State = EntityState.Modified;
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
+
+            }
+            catch (Exception) { throw; }
+
+            return paso;
+        }
+
+
         public static bool Eliminar(int id)
         {
 
@@ -60,31 +85,6 @@ namespace ProyectoAplicadaI.BLL
 
             return paso;
         }
-
-
-
-        public static bool Editar(ActivodeNegocio capitaldenegocio)
-        {
-
-            bool paso = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                contexto.Entry(capitaldenegocio).State = EntityState.Modified;
-
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
-
-            }
-            catch (Exception) { throw; }
-
-            return paso;
-        }
-
 
 
         public static ActivodeNegocio Buscar(int id)
