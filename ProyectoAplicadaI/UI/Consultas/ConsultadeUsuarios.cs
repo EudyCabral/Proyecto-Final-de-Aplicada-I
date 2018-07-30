@@ -224,5 +224,10 @@ namespace ProyectoAplicadaI.UI.Consultas
                 return;
             }
         }
+
+        private void ConsultadeUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

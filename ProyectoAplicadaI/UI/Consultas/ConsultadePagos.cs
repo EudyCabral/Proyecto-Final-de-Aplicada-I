@@ -19,7 +19,7 @@ namespace ProyectoAplicadaI.UI.Consultas
             InitializeComponent();
         }
 
-        Expression<Func<Cobros, bool>> filtro = x => true;
+        Expression<Func<Pagos, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
 
@@ -43,11 +43,11 @@ namespace ProyectoAplicadaI.UI.Consultas
                         int id = Convert.ToInt32(CriteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
-                            filtro = x => x.CobroId == id && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
+                            filtro = x => x.PagosId == id && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
                         }
                         else
                         {
-                            filtro = x => x.CobroId == id;
+                            filtro = x => x.PagosId == id;
                         }
 
 

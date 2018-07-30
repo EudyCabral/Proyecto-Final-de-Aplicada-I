@@ -72,7 +72,7 @@
     <Compile Include="ENTIDADES\ActivodeNegocio.cs" />
     <Compile Include="ENTIDADES\Clientes.cs" />
     <Compile Include="ENTIDADES\EntradadeActivos.cs" />
-    <Compile Include="ENTIDADES\Cobros.cs" />
+    <Compile Include="ENTIDADES\Pagos.cs" />
     <Compile Include="ENTIDADES\Recibos.cs" />
     <Compile Include="ENTIDADES\ReciboDetalles.cs" />
     <Compile Include="ENTIDADES\Usuarios.cs" />
@@ -408,7 +408,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Scripts\Scripts.sql" />
     <None Include="Resources\icons8_Password_1_32.png" />
     <None Include="Resources\icons8_Customer_322.png" />
     <None Include="Resources\icons8_Customer_321.png" />
@@ -466,6 +465,8 @@
     <None Include="Resources\icons8_Login32_32.png" />
     <None Include="Resources\icons8_Login_16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Scripts.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

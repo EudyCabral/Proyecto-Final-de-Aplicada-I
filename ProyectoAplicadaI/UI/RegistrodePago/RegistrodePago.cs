@@ -237,15 +237,15 @@ namespace ProyectoAplicadaI.UI.Cobro
 
         }
         
-        private Cobros Llenaclase()
+        private Pagos Llenaclase()
         {
-            Cobros cobros = new Cobros();
+            Pagos cobros = new Pagos();
            List<Recibos> detalle = (List<Recibos>)CobrosdataGridView.DataSource;
 
           int  id = detalle.ElementAt(CobrosdataGridView.CurrentRow.Index).ReciboId;
             
 
-            cobros.CobroId = Convert.ToInt32(cobroIdNumericUpDown.Value);
+            cobros.PagosId = Convert.ToInt32(cobroIdNumericUpDown.Value);
             cobros.ActivodeNegocioId = 1;
             cobros.Fecha = fechaDateTimePicker.Value;
             cobros.Abono = Convert.ToDecimal(PagosTextBox.Text);
@@ -263,7 +263,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             }
             else
             {
-                Cobros cobros = Llenaclase();
+                Pagos cobros = Llenaclase();
                 bool paso = false;
                 if (cobroIdNumericUpDown.Value == 0)
                 {
@@ -348,7 +348,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             else
             {
                 int id = Convert.ToInt32(cobroIdNumericUpDown.Value);
-                Cobros cobros = BLL.CobroBLL.Buscar(id);
+                Pagos cobros = BLL.CobroBLL.Buscar(id);
                 PagosTextBox.ReadOnly = false;
 
                 if (cobros != null)
@@ -367,10 +367,10 @@ namespace ProyectoAplicadaI.UI.Cobro
             }
         }
 
-        private void LlenaCampos(Cobros cobros)
+        private void LlenaCampos(Pagos cobros)
         {
            
-            cobroIdNumericUpDown.Value = cobros.CobroId;
+            cobroIdNumericUpDown.Value = cobros.PagosId;
             PagosTextBox.Text = cobros.Abono.ToString();
 
             CobrosdataGridView.DataSource = BLL.ReciboBLL.GetList(x => x.ReciboId == cobros.ReciboId);

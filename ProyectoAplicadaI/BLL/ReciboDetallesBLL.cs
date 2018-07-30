@@ -26,7 +26,7 @@ namespace ProyectoAplicadaI.BLL
             catch (Exception) { throw; }
             return recibos;
 
-            contexto.Dispose();
+       
         }
     }
 }

@@ -475,7 +475,7 @@ namespace ProyectoAplicadaI.UI.Registros
             List<Recibos> nuevo = new List<Recibos>();
 
             nuevo.Add( list.Last()); 
-            // return 
+            
             VentanaReciboReporte abrir = new VentanaReciboReporte(nuevo);
             abrir.Show();
 

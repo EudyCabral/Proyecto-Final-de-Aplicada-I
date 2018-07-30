@@ -13,8 +13,8 @@ namespace ProyectoAplicadaI.UI.VentanasReportes
 {
     public partial class ReportedeCobros : Form
     {
-        List<Cobros> datos = new List<Cobros>();
-        public ReportedeCobros(List<Cobros> list)
+        List<Pagos> datos = new List<Pagos>();
+        public ReportedeCobros(List<Pagos> list)
         {
             InitializeComponent();
             datos = list;

@@ -6,18 +6,18 @@ using System.Text;
 
 namespace ProyectoAplicadaI.ENTIDADES
 {
-    public class Cobros
+    public class Pagos
     {
         [Key]
-        public int CobroId { get; set; }
+        public int PagosId { get; set; }
         public int ReciboId { get; set; }
         public int ActivodeNegocioId { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Abono { get; set; }
 
-        public Cobros()
+        public Pagos()
         {
-            CobroId = 0;
+            PagosId = 0;
             ReciboId = 0;
             Fecha = DateTime.Now;
             Abono = 0;

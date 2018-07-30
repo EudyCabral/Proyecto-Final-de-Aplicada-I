@@ -27,7 +27,7 @@ namespace ProyectoAplicadaI.BLL
 
        
 
-        public static bool Guardar(Cobros cobro)
+        public static bool Guardar(Pagos cobro)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -67,7 +67,7 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                Cobros cobro = contexto.cobro.Find(id);
+                Pagos cobro = contexto.cobro.Find(id);
 
                 if (cobro != null)
                 {
@@ -101,7 +101,7 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static bool Editar(Cobros cobro)
+        public static bool Editar(Pagos cobro)
         {
 
             bool paso = false;
@@ -111,7 +111,7 @@ namespace ProyectoAplicadaI.BLL
             {
              
 
-                Cobros Anterior = BLL.CobroBLL.Buscar(cobro.CobroId);
+                Pagos Anterior = BLL.CobroBLL.Buscar(cobro.PagosId);
              
 
                 decimal diferencia;
@@ -161,10 +161,10 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static Cobros Buscar(int id)
+        public static Pagos Buscar(int id)
         {
 
-            Cobros cobro = new Cobros();
+            Pagos cobro = new Pagos();
             Contexto contexto = new Contexto();
 
             try
@@ -180,9 +180,9 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static List<Cobros> GetList(Expression<Func<Cobros, bool>> expression)
+        public static List<Pagos> GetList(Expression<Func<Pagos, bool>> expression)
         {
-            List<Cobros> cobro = new List<Cobros>();
+            List<Pagos> cobro = new List<Pagos>();
             Contexto contexto = new Contexto();
 
             try

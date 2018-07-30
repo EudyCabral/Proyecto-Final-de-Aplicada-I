@@ -49,7 +49,8 @@ create TABLE Recibos
 			NombredeCliente varchar(45),
             Fecha  Date,
             MontoTotal money,
-			Abono money
+			Abono money,
+			UltimaFechadeVigencia date
 
 );
 go
@@ -66,7 +67,7 @@ create TABLE ReciboDetalles
             Descripcion varchar(max),
             Cantidad int,
             Monto money,
-            FechadeEmpeño  date,	        
+           	        
 );
 go
 
@@ -117,9 +118,10 @@ select *from Usuarios
 
 Select* from ReciboDetalles
 Select* from Recibos
+select *from Cobros
 select *from ActivodeNegocios
 select *from Articulos
-select *from Cobros
+
 
 
 truncate table EntradadeActivos

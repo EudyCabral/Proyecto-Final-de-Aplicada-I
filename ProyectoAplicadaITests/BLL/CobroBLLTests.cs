@@ -14,9 +14,9 @@ namespace ProyectoAplicadaI.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Cobros cobro = new Cobros();
+            Pagos cobro = new Pagos();
             bool paso;
-            cobro.CobroId = 0;
+            cobro.PagosId = 0;
             cobro.ActivodeNegocioId = 1;
             cobro.ReciboId = 1;
             cobro.Fecha = DateTime.Now;
@@ -30,9 +30,9 @@ namespace ProyectoAplicadaI.BLL.Tests
         [TestMethod()]
         public void EditarTest()
         {
-            Cobros cobro = new Cobros();
+            Pagos cobro = new Pagos();
             bool paso;
-            cobro.CobroId = 1;
+            cobro.PagosId = 1;
             cobro.ActivodeNegocioId = 1;
             cobro.ReciboId = 1;
             cobro.Fecha = DateTime.Now;
@@ -46,7 +46,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
 
-            Cobros cobros = new Cobros();
+            Pagos cobros = new Pagos();
             cobros=BLL.CobroBLL.Buscar(id);
             Assert.IsNotNull(cobros);
 

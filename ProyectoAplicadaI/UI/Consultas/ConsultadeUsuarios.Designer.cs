@@ -142,6 +142,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultadeUsuarios";
             this.Text = "Consulta de Usuarios";
+            this.Load += new System.EventHandler(this.ConsultadeUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariodataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).EndInit();
             this.ResumeLayout(false);
