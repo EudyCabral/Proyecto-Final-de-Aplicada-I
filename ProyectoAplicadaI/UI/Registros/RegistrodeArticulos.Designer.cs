@@ -51,7 +51,7 @@
             // articuloIdLabel
             // 
             articuloIdLabel.AutoSize = true;
-            articuloIdLabel.Location = new System.Drawing.Point(17, 14);
+            articuloIdLabel.Location = new System.Drawing.Point(17, 17);
             articuloIdLabel.Name = "articuloIdLabel";
             articuloIdLabel.Size = new System.Drawing.Size(57, 13);
             articuloIdLabel.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             // articuloIdNumericUpDown
             // 
-            this.articuloIdNumericUpDown.Location = new System.Drawing.Point(80, 12);
+            this.articuloIdNumericUpDown.Location = new System.Drawing.Point(80, 13);
             this.articuloIdNumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -89,7 +89,7 @@
             // 
             // inventarioTextBox
             // 
-            this.inventarioTextBox.Location = new System.Drawing.Point(80, 92);
+            this.inventarioTextBox.Location = new System.Drawing.Point(80, 93);
             this.inventarioTextBox.Name = "inventarioTextBox";
             this.inventarioTextBox.ReadOnly = true;
             this.inventarioTextBox.Size = new System.Drawing.Size(100, 20);
@@ -97,7 +97,7 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(80, 51);
+            this.nombreTextBox.Location = new System.Drawing.Point(80, 52);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(155, 20);
             this.nombreTextBox.TabIndex = 6;
@@ -170,6 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(326, 183);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

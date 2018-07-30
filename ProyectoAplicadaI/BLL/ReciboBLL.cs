@@ -230,14 +230,51 @@ namespace ProyectoAplicadaI.BLL
 
         }
 
-
-        public static Recibos BusquedaUltimoElemento()
+        public static bool ModEspecial(Recibos recibo)
         {
-           
-            List<Recibos> list = new List<Recibos>();
+            bool paso = false;
+            Contexto contexto = new Contexto();
 
 
-            return list.Last();
+
+            try
+            {
+
+
+
+
+                Recibos Anterior = BLL.ReciboBLL.Buscar(recibo.ReciboId);
+
+
+                //identificar la diferencia ya sea restada o sumada
+                decimal diferencia;
+
+                diferencia = Anterior.Abono - recibo.Abono;
+
+                //aplicar diferencia al inventario
+                Recibos recibos = BLL.ReciboBLL.Buscar(recibo.ReciboId);
+                recibos.Abono = Math.Abs(recibos.Abono - diferencia);
+
+
+          
+
+                contexto.Entry(recibo).State = EntityState.Modified;
+            
+
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
+            }
+            catch (Exception) { throw; }
+            return paso;
         }
+
+
+
+
+
     }
 }

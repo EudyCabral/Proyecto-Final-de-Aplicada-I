@@ -17,7 +17,7 @@ namespace ProyectoAplicadaI.DAL
         public DbSet<ReciboDetalles> Detalles { get; set; }
         public DbSet<Usuarios> usuarios { get; set; }
         public DbSet<EntradadeActivos> entradadeActivos { get; set; }
-        public DbSet<Cobro> cobro { get; set; }
+        public DbSet<Cobros> cobro { get; set; }
 
         public Contexto() : base ("ConStr")
         {

@@ -50,6 +50,7 @@
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasDeActivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recibosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nombrelabel = new System.Windows.Forms.Label();
             this.TipodeUsuariolabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -83,7 +84,7 @@
             // 
             this.cerrarSesionToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Exit_321;
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
@@ -91,7 +92,7 @@
             // 
             this.salirToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Cancel_321;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -190,7 +191,8 @@
             this.empeñoToolStripMenuItem,
             this.usuarioToolStripMenuItem,
             this.entradasDeActivoToolStripMenuItem,
-            this.recibosToolStripMenuItem});
+            this.recibosToolStripMenuItem,
+            this.pagosToolStripMenuItem});
             this.consultaToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_View_32;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
@@ -243,6 +245,14 @@
             this.recibosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.recibosToolStripMenuItem.Text = "Recibos";
             this.recibosToolStripMenuItem.Click += new System.EventHandler(this.recibosToolStripMenuItem_Click);
+            // 
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_Cash_in_Hand_321;
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
             // Nombrelabel
             // 
@@ -314,6 +324,7 @@
         private System.Windows.Forms.ToolStripMenuItem cobroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobrosDeArticulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recibosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
     }
 }
 

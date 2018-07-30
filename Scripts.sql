@@ -2,9 +2,9 @@ create database CompraventaDB
 GO
 USE CompraventaDB
 GO
-CREATE TABLE Clientes
+create TABLE Clientes
 (  ClienteId int primary key identity(1,1),
-            Nombre varchar(30),
+            Nombre varchar(45),
             Cedula varchar(13),
             Telefono varchar(12),
             Direccion varchar(max)
@@ -16,7 +16,7 @@ create TABLE Articulos
 (			
 
 	   ArticuloId int primary key identity(1,1),
-	   Nombre varchar(30),
+	   Nombre varchar(40),
 	   Inventario int
 
 			
@@ -37,7 +37,7 @@ create TABLE ActivodeNegocios
 );
 go
 
-insert into ActivodeNegocios(Nombre,Activo) Values('Activos',75000);
+insert into ActivodeNegocios(Nombre,Activo) Values('Activos',0);
 
 go
 create TABLE Recibos
@@ -45,9 +45,11 @@ create TABLE Recibos
 
 			ReciboId int primary key identity(1,1),
 			ActivodeNegocioId int,
-			NombredeCliente varchar(30),
+			ClienteId int,
+			NombredeCliente varchar(45),
             Fecha  Date,
-            MontoTotal money
+            MontoTotal money,
+			Abono money
 
 );
 go
@@ -59,32 +61,28 @@ create TABLE ReciboDetalles
 
 			ID int primary key identity(1,1),
             ReciboId int,
-            ClienteId int,
             ArticuloId int,
-			NombredeCliente varchar(30),
             Articulo varchar(40),
             Descripcion varchar(max),
             Cantidad int,
             Monto money,
-            FechadeEmpeño  date,
-           
-
-			
-         
+            FechadeEmpeño  date,	        
 );
 go
 
 go
-Create table Usuarios
+create table Usuarios
 (
 	UsuariosId int primary Key identity(1,1),
-	Nombre varchar(25),
-	Usuario varchar(15),
+	Nombre varchar(45),
+	Usuario varchar(25),
 	Contraseña varchar(20),
 	Tipodeusuario varchar(15)
 
 );
 go
+
+insert into Usuarios(Nombre,Usuario,Contraseña,Tipodeusuario) Values('Eudy Cabral','Eudy','122017','Administrador');
 
 go
 create table EntradadeActivos
@@ -99,6 +97,20 @@ create table EntradadeActivos
 go
 
 
+
+go
+create table Cobros
+(
+            CobroId int primary key Identity(1,1),
+            ReciboId int,
+			ActivodeNegocioId int,
+            Fecha Date,
+            Abono money,
+		);
+go
+
+
+
 Select* from EntradadeActivos
 select *from Clientes
 select *from Usuarios
@@ -107,11 +119,12 @@ Select* from ReciboDetalles
 Select* from Recibos
 select *from ActivodeNegocios
 select *from Articulos
+select *from Cobros
 
 
 truncate table EntradadeActivos
 truncate table Clientes
-truncate table Usuarios
+truncate table Cobros
 
 truncate table ReciboDetalles
 truncate table Recibos

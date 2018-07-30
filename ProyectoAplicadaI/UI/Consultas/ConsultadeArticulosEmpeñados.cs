@@ -44,16 +44,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                     else
                     {
                         int id = Convert.ToInt32(CriteriotextBox.Text);
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.ReciboId == id && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
+                       
                             filtro = x => x.ReciboId == id;
-                        }
-                            
-                        
+                     
 
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
@@ -84,14 +77,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                     {
                         int id = Convert.ToInt32(CriteriotextBox.Text);
                         
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.ArticuloId == id && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
+                       
                             filtro = x => x.ArticuloId == id;
-                        }
+                     
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
@@ -116,16 +104,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                     else
                     {
 
-                        
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.Articulo.Equals(CriteriotextBox.Text) && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
-                            filtro = x => x.Articulo.Equals(CriteriotextBox.Text);
-                        }
-
+                       
+                            filtro = x => x.Articulo.Contains(CriteriotextBox.Text);
+                       
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -152,15 +133,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                     else
                     {
 
-                        
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.Descripcion.Contains(CriteriotextBox.Text) && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
+                       
                             filtro = x => x.Descripcion.Contains(CriteriotextBox.Text);
-                        }
+                        
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
@@ -190,16 +165,9 @@ namespace ProyectoAplicadaI.UI.Consultas
                         int cantidad = Convert.ToInt32(CriteriotextBox.Text);
                         
 
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.Cantidad == cantidad && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
+                    
                             filtro = x => x.Cantidad == cantidad;
-                        }
-
-
+                    
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -228,14 +196,8 @@ namespace ProyectoAplicadaI.UI.Consultas
                         decimal monto = Convert.ToDecimal(CriteriotextBox.Text);
                         
 
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.Monto == monto && (x.FechadeEmpeño >= desdedateTimePicker.Value.Date && x.FechadeEmpeño <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
                             filtro = x => x.Monto == monto;
-                        }
+                 
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {

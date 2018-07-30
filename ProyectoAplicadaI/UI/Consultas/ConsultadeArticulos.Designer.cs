@@ -45,22 +45,22 @@
             // ArticulosdataGridView
             // 
             this.ArticulosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ArticulosdataGridView.Location = new System.Drawing.Point(7, 89);
+            this.ArticulosdataGridView.Location = new System.Drawing.Point(15, 89);
             this.ArticulosdataGridView.Name = "ArticulosdataGridView";
             this.ArticulosdataGridView.Size = new System.Drawing.Size(333, 277);
             this.ArticulosdataGridView.TabIndex = 34;
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(50, 37);
+            this.CriteriotextBox.Location = new System.Drawing.Point(223, 12);
             this.CriteriotextBox.Name = "CriteriotextBox";
-            this.CriteriotextBox.Size = new System.Drawing.Size(132, 20);
+            this.CriteriotextBox.Size = new System.Drawing.Size(117, 20);
             this.CriteriotextBox.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 39);
+            this.label2.Location = new System.Drawing.Point(179, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 31;
@@ -69,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 12);
+            this.label1.Location = new System.Drawing.Point(2, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 30;
@@ -84,7 +84,7 @@
             "Nombre",
             "Inventario ",
             "Todos"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(50, 9);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(43, 9);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(132, 21);
             this.FiltrocomboBox.TabIndex = 29;
@@ -114,7 +114,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoAplicadaI.Properties.Resources.icons8_View_323;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(213, 9);
+            this.Buscarbutton.Location = new System.Drawing.Point(265, 38);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 48);
             this.Buscarbutton.TabIndex = 33;
@@ -127,7 +127,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 427);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(365, 427);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.ArticulosdataGridView);
             this.Controls.Add(this.Buscarbutton);

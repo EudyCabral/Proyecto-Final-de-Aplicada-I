@@ -61,6 +61,7 @@
     <Compile Include="BLL\ActivodeNegocioBLLTests.cs" />
     <Compile Include="BLL\ArticulosBLLTests.cs" />
     <Compile Include="BLL\ClienteBLLTests.cs" />
+    <Compile Include="BLL\CobroBLLTests.cs" />
     <Compile Include="BLL\EntradadeActivosBLLTests.cs" />
     <Compile Include="BLL\ReciboBLLTests.cs" />
     <Compile Include="BLL\UsuariosBLLTests.cs" />

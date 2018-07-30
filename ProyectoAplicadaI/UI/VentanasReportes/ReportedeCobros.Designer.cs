@@ -1,6 +1,6 @@
 ﻿namespace ProyectoAplicadaI.UI.VentanasReportes
 {
-    partial class VentanaArticulosdelAlmacen
+    partial class ReportedeCobros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaArticulosdelAlmacen));
-            this.AlmacenViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportedeCobros));
+            this.CobrosViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // AlmacenViewer
+            // CobrosViewer
             // 
-            this.AlmacenViewer.ActiveViewIndex = -1;
-            this.AlmacenViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AlmacenViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.AlmacenViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AlmacenViewer.Location = new System.Drawing.Point(0, 0);
-            this.AlmacenViewer.Name = "AlmacenViewer";
-            this.AlmacenViewer.Size = new System.Drawing.Size(800, 450);
-            this.AlmacenViewer.TabIndex = 0;
-            this.AlmacenViewer.Load += new System.EventHandler(this.AlmacenViewer_Load);
+            this.CobrosViewer.ActiveViewIndex = -1;
+            this.CobrosViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CobrosViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CobrosViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CobrosViewer.Location = new System.Drawing.Point(0, 0);
+            this.CobrosViewer.Name = "CobrosViewer";
+            this.CobrosViewer.Size = new System.Drawing.Size(800, 450);
+            this.CobrosViewer.TabIndex = 0;
+            this.CobrosViewer.Load += new System.EventHandler(this.CobrosViewer_Load);
             // 
-            // VentanaArticulosdelAlmacen
+            // ReportedeCobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AlmacenViewer);
+            this.Controls.Add(this.CobrosViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "VentanaArticulosdelAlmacen";
-            this.Text = "Reporte de Articulos de en Almacen";
+            this.Name = "ReportedeCobros";
+            this.Text = "Reporte de Pagos";
+            this.Load += new System.EventHandler(this.ReportedeCobros_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer AlmacenViewer;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer CobrosViewer;
     }
 }

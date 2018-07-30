@@ -60,7 +60,7 @@
             // usuariosIdLabel
             // 
             usuariosIdLabel.AutoSize = true;
-            usuariosIdLabel.Location = new System.Drawing.Point(16, 14);
+            usuariosIdLabel.Location = new System.Drawing.Point(16, 18);
             usuariosIdLabel.Name = "usuariosIdLabel";
             usuariosIdLabel.Size = new System.Drawing.Size(63, 13);
             usuariosIdLabel.TabIndex = 1;
@@ -125,21 +125,21 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(105, 58);
+            this.nombreTextBox.Location = new System.Drawing.Point(105, 57);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(120, 20);
             this.nombreTextBox.TabIndex = 4;
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(105, 109);
+            this.usuarioTextBox.Location = new System.Drawing.Point(105, 108);
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(120, 20);
             this.usuarioTextBox.TabIndex = 6;
             // 
             // contraseñaTextBox
             // 
-            this.contraseñaTextBox.Location = new System.Drawing.Point(105, 160);
+            this.contraseñaTextBox.Location = new System.Drawing.Point(105, 159);
             this.contraseñaTextBox.MaxLength = 15;
             this.contraseñaTextBox.Name = "contraseñaTextBox";
             this.contraseñaTextBox.PasswordChar = '*';
@@ -153,7 +153,7 @@
             this.tipodeusuarioComboBox.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.tipodeusuarioComboBox.Location = new System.Drawing.Point(105, 245);
+            this.tipodeusuarioComboBox.Location = new System.Drawing.Point(105, 244);
             this.tipodeusuarioComboBox.Name = "tipodeusuarioComboBox";
             this.tipodeusuarioComboBox.Size = new System.Drawing.Size(120, 21);
             this.tipodeusuarioComboBox.TabIndex = 10;
@@ -164,7 +164,7 @@
             // 
             // ConfirmartextBox
             // 
-            this.ConfirmartextBox.Location = new System.Drawing.Point(131, 204);
+            this.ConfirmartextBox.Location = new System.Drawing.Point(131, 203);
             this.ConfirmartextBox.MaxLength = 15;
             this.ConfirmartextBox.Name = "ConfirmartextBox";
             this.ConfirmartextBox.PasswordChar = '*';
@@ -235,6 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(351, 338);
             this.Controls.Add(label1);
             this.Controls.Add(this.ConfirmartextBox);

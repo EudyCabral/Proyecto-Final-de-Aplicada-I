@@ -17,7 +17,7 @@ namespace ProyectoAplicadaI.ENTIDADES
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal Monto { get; set; }
-        public DateTime FechadeEmpeño { get; set; }
+
  
 
         [ForeignKey("ArticuloId")]
@@ -31,7 +31,7 @@ namespace ProyectoAplicadaI.ENTIDADES
             ReciboId = 0;
         }
 
-        public ReciboDetalles(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto, DateTime fechadeEmpeño)
+        public ReciboDetalles(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto)
         {
             ID = iD;
             ReciboId = reciboId;
@@ -40,8 +40,7 @@ namespace ProyectoAplicadaI.ENTIDADES
             Descripcion = descripcion;
             Cantidad = cantidad;
             Monto = monto;
-            FechadeEmpeño = fechadeEmpeño;
-         
+    
         }
     }
 }

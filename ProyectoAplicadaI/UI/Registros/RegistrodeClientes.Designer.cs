@@ -113,14 +113,14 @@
             // 
             // nombreTextBox
             // 
-            this.nombreTextBox.Location = new System.Drawing.Point(77, 47);
+            this.nombreTextBox.Location = new System.Drawing.Point(77, 46);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(146, 20);
             this.nombreTextBox.TabIndex = 4;
             // 
             // cedulaMaskedTextBox
             // 
-            this.cedulaMaskedTextBox.Location = new System.Drawing.Point(77, 80);
+            this.cedulaMaskedTextBox.Location = new System.Drawing.Point(77, 79);
             this.cedulaMaskedTextBox.Mask = "000-0000000-0";
             this.cedulaMaskedTextBox.Name = "cedulaMaskedTextBox";
             this.cedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
@@ -136,7 +136,7 @@
             // 
             // telefonoMaskedTextBox
             // 
-            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(77, 179);
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(77, 178);
             this.telefonoMaskedTextBox.Mask = "000-000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
@@ -210,6 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(334, 272);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

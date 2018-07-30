@@ -88,7 +88,24 @@ namespace ProyectoAplicadaI.UI.Registros
                    "Debe Dijitar un Monto");
                 paso = true;
             }
-   
+
+
+            if (error == 5 && string.IsNullOrWhiteSpace(clienteIdComboBox.Text) || string.IsNullOrEmpty(articuloIdComboBox.Text))
+            {
+                HayErrores.SetError(clienteIdComboBox,
+                   "No hay Cliente o Articulos Creado");
+                paso = true;
+            }
+
+
+            if (error == 5 && string.IsNullOrEmpty(articuloIdComboBox.Text))
+            {
+                HayErrores.SetError(articuloIdComboBox,
+                   "No hay Cliente o Articulos Creado");
+                paso = true;
+            }
+
+
 
             return paso;
         }
@@ -153,7 +170,8 @@ namespace ProyectoAplicadaI.UI.Registros
             recibo.Fecha = fechadeEmpeñoDateTimePicker.Value;
             recibo.ActivodeNegocioId = 1;
             recibo.MontoTotal = Convert.ToDecimal(montoTotalTextBox.Text);
-
+            recibo.Abono = 0;
+            recibo.UltimaFechadeVigencia = fechadeEmpeñoDateTimePicker.Value.AddDays(95);
 
 
 
@@ -168,8 +186,8 @@ namespace ProyectoAplicadaI.UI.Registros
                       Convert.ToString(item.Cells["articulo"].Value),
                       Convert.ToString(item.Cells["descripcion"].Value),
                        ToInt(item.Cells["cantidad"].Value),
-                    ToDecimal(item.Cells["monto"].Value), 
-                    Convert.ToDateTime(item.Cells["fechadeEmpeño"].Value) 
+                    ToDecimal(item.Cells["monto"].Value)
+
 
 
 
@@ -185,7 +203,7 @@ namespace ProyectoAplicadaI.UI.Registros
             fechadeEmpeñoDateTimePicker.Value = recibos.Fecha;
             clienteIdComboBox.Text = recibos.NombredeCliente;
             montoTotalTextBox.Text = recibos.MontoTotal.ToString();
-
+            
 
             //Cargar el detalle al Grid
             DetalledataGridView.DataSource = recibos.Detalle;
@@ -217,6 +235,11 @@ namespace ProyectoAplicadaI.UI.Registros
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
+            if(Validar(5))
+            {
+                MessageBox.Show(" Combobox Vacio", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (Validar(4))
             {
                 MessageBox.Show(" LLene las Casillas Correspondiente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -237,7 +260,7 @@ namespace ProyectoAplicadaI.UI.Registros
                 {
                     detalle = (List<ReciboDetalles>)DetalledataGridView.DataSource;
                 }
-
+          
 
                 if (string.IsNullOrEmpty(montoTextBox.Text) && string.IsNullOrEmpty(cantidadNumericUpDown.Text))
                 {
@@ -253,8 +276,7 @@ namespace ProyectoAplicadaI.UI.Registros
                                 articulo: (string)BLL.ArticulosBLL.RetornarNombre(articuloIdComboBox.Text),
                                 descripcion: (string)descripcionTextBox.Text,
                             cantidad: (int)Convert.ToInt32(cantidadNumericUpDown.Value),
-                            monto: (decimal)Convert.ToDecimal(montoTextBox.Text),
-                            fechadeEmpeño: (DateTime)Convert.ToDateTime(fechadeEmpeñoDateTimePicker.Text)
+                            monto: (decimal)Convert.ToDecimal(montoTextBox.Text)
 
 
                         ));
@@ -271,6 +293,10 @@ namespace ProyectoAplicadaI.UI.Registros
                     }
 
                     montoTotalTextBox.Text = monto.ToString();
+
+                 
+
+
                     //Oculta las Columnas No deceada
                     NoColumnas();
                     LimpiaRecibo();
@@ -312,7 +338,7 @@ namespace ProyectoAplicadaI.UI.Registros
         private void fechadeEmpeñoDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             DateTime FechaAct = fechaActualDateTimePicker.Value;
-            DateTime FechaEmpeño = fechadeEmpeñoDateTimePicker.Value.AddDays(90);
+            DateTime FechaEmpeño = fechadeEmpeñoDateTimePicker.Value.AddDays(95);
             if (FechaAct >= FechaEmpeño)
             {
                 estadolabel.Text = "Vencido";
@@ -347,6 +373,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+
             if (Validar(2))
             {
                 MessageBox.Show("Debe Agregar Algun Producto al Grid", "Validación",
@@ -355,6 +382,15 @@ namespace ProyectoAplicadaI.UI.Registros
             }
             else
             {
+                foreach (var item in BLL.ActivodeNegocioBLL.GetList(x => x.ActivodeNegocioId == 1))
+                {
+
+                    if (item.Activo < Convert.ToDecimal(montoTotalTextBox.Text))
+                    {
+                        MessageBox.Show("La Compraventa No dispone de Esa Cantidad de dinero ", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
 
                 Recibos recibos = LlenaClase();
                 bool Paso = false;
@@ -445,5 +481,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
 
         }
+
+      
     }
 }

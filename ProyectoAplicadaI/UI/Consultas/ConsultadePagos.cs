@@ -12,20 +12,21 @@ using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Consultas
 {
-    public partial class ConsultadeRecibos : Form
+    public partial class ConsultadePagos : Form
     {
-        public ConsultadeRecibos()
+        public ConsultadePagos()
         {
             InitializeComponent();
         }
-        Expression<Func<Recibos, bool>> filtro = x => true;
+
+        Expression<Func<Cobros, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
 
             switch (FiltrocomboBox.SelectedIndex)
             {
 
-                case 0://ReciboId
+                case 0://CobroId
 
                     if (Validar(1))
                     {
@@ -40,6 +41,46 @@ namespace ProyectoAplicadaI.UI.Consultas
                     else
                     {
                         int id = Convert.ToInt32(CriteriotextBox.Text);
+                        if (FechacheckBox.Checked == true)
+                        {
+                            filtro = x => x.CobroId == id && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
+                        }
+                        else
+                        {
+                            filtro = x => x.CobroId == id;
+                        }
+
+
+
+
+                        if (BLL.CobroBLL.GetList(filtro).Count() == 0)
+                        {
+                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
+
+
+                    break;
+
+
+                case 1:// ReciboId 
+
+                    if (Validar(1))
+                    {
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (Validar(2))
+                    {
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        int id = Convert.ToInt32(CriteriotextBox.Text);
+
                         if (FechacheckBox.Checked == true)
                         {
                             filtro = x => x.ReciboId == id && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
@@ -49,47 +90,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                             filtro = x => x.ReciboId == id;
                         }
 
-
-
-
-                        if (BLL.ReciboBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-
-
-
-                    break;
-
-
-                case 1:// ClienteId 
-
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(2))
-                    {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        int id = Convert.ToInt32(CriteriotextBox.Text);
-
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.ClienteId == id && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
-                            filtro = x => x.ClienteId == id;
-                        }
-
-                        if (BLL.ReciboBLL.GetList(filtro).Count() == 0)
+                        if (BLL.CobroBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -97,45 +98,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     break;
 
-                case 2://NombredeCliente
-
-                    if (Validar(1))
-                    {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (Validar(3))
-                    {
-                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-
-
-                        if (FechacheckBox.Checked == true)
-                        {
-                            filtro = x => x.NombredeCliente.Contains(CriteriotextBox.Text) && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
-                        }
-                        else
-                        {
-                            filtro = x => x.NombredeCliente.Contains(CriteriotextBox.Text);
-                        }
-
-                        if (BLL.ReciboBLL.GetList(filtro).Count() == 0)
-                        {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                    }
-
-
-
-                    break;
-
-               
-
-                case 3:// Monto
+                case 2://Abono
 
                     if (Validar(1))
                     {
@@ -149,19 +112,18 @@ namespace ProyectoAplicadaI.UI.Consultas
                     }
                     else
                     {
-                        decimal monto = Convert.ToDecimal(CriteriotextBox.Text);
-
+                        decimal abono = Convert.ToDecimal(CriteriotextBox.Text);
 
                         if (FechacheckBox.Checked == true)
                         {
-                            filtro = x => x.MontoTotal == monto && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
+                            filtro = x => x.Abono == abono && (x.Fecha >= desdedateTimePicker.Value.Date && x.Fecha <= HastadateTimePicker.Value.Date);
                         }
                         else
                         {
-                            filtro = x => x.MontoTotal== monto;
+                            filtro = x => x.Abono == abono;
                         }
 
-                        if (BLL.ReciboBLL.GetList(filtro).Count() == 0)
+                        if (BLL.CobroBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -173,24 +135,31 @@ namespace ProyectoAplicadaI.UI.Consultas
                     break;
 
 
-                case 4://TODO
-                    filtro = x => true;
 
-                    if (BLL.ReciboBLL.GetList(filtro).Count() == 0)
+                case 3:// Monto
                     {
-                        MessageBox.Show("Lista esta Vacia, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                        filtro = x => true;
+
+                        if (BLL.CobroBLL.GetList(filtro).Count() == 0)
+                        {
+                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
                     }
+
+
+
                     break;
+
             }
 
             if (FiltrocomboBox.SelectedItem != null)
             {
-                RecibodataGridView.DataSource = BLL.ReciboBLL.GetList(filtro);
+                CobrodataGridView.DataSource = BLL.CobroBLL.GetList(filtro);
                 CriteriotextBox.Clear();
                 GeneralerrorProvider.Clear();
-                RecibodataGridView.Columns["ActivodeNegocioId"].Visible = false;
-                RecibodataGridView.Columns["Detalle"].Visible = false;
+                CobrodataGridView.Columns["ActivodeNegocioId"].Visible = false;
+                
 
 
             }
@@ -220,49 +189,26 @@ namespace ProyectoAplicadaI.UI.Consultas
 
             return paso;
         }
-
-            private void ConsultadeRecibos_Load(object sender, EventArgs e)
-            {
-
-            
-            }
-
-            private void Imprimirbutton_Click(object sender, EventArgs e)
-            {
-                Recibos recibo = new Recibos();
-                if (RecibodataGridView.Rows.Count > 0 && RecibodataGridView.CurrentRow != null)
-                {
-                    //convertir el grid en la lista
-                    List<Recibos> detalle = (List<Recibos>)RecibodataGridView.DataSource;
-
-                    //selecciona la fila             
-                    int id = detalle.ElementAt(RecibodataGridView.CurrentRow.Index).ReciboId;
-
-                VentanaReciboReporte abrir = new VentanaReciboReporte(BLL.ReciboBLL.GetList(x => x.ReciboId == id));
-                abrir.Show();
-            }
-            else
-            {
-                MessageBox.Show("No Hay Nada dentro del Grid", "Validacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                return;
-            }
-            }
-
-        private void Listabutton_Click(object sender, EventArgs e)
+        private void ConsultadeCobros_Load(object sender, EventArgs e)
         {
-            if (RecibodataGridView.Rows.Count > 0 && RecibodataGridView.CurrentRow != null)
-            {
-                VentanadeListadeRecibo abrir = new VentanadeListadeRecibo(BLL.ReciboBLL.GetList(filtro));
-                abrir.Show();
-            }
-            else
-            {
-                MessageBox.Show("No Hay Nada dentro del Grid", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
 
         }
 
-     
+        private void Listabutton_Click(object sender, EventArgs e)
+        {
+
+            if (CobrodataGridView.DataSource != null)
+            {
+                ReportedeCobros abrir = new ReportedeCobros(BLL.CobroBLL.GetList(filtro));
+                {
+                    abrir.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                return;
+            }
+        }
     }
 }

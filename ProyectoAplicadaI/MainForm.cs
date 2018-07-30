@@ -117,7 +117,7 @@ namespace ProyectoAplicadaI
 
         private void cobrosDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CobrosdeEmpeño cobros =new CobrosdeEmpeño();
+            RegistrodePago cobros =new RegistrodePago();
             cobros.Show();
         }
 
@@ -126,6 +126,12 @@ namespace ProyectoAplicadaI
             ConsultadeRecibos recibos = new ConsultadeRecibos();
 
             recibos.Show();
+        }
+
+        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultadePagos consulta = new ConsultadePagos();
+            consulta.Show();
         }
     }
 }

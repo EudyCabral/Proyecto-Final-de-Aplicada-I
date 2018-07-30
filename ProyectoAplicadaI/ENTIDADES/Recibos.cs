@@ -15,6 +15,8 @@ namespace ProyectoAplicadaI.ENTIDADES
         public string NombredeCliente { get; set; }
         public DateTime Fecha { get; set; }
         public decimal MontoTotal { get; set; }
+        public decimal Abono { get; set; }
+        public DateTime UltimaFechadeVigencia { get; set; }
 
         public virtual ICollection<ReciboDetalles> Detalle { get; set; }
 
@@ -27,11 +29,13 @@ namespace ProyectoAplicadaI.ENTIDADES
             NombredeCliente = string.Empty;
             Fecha = DateTime.Now;
             MontoTotal = 0;
+            Abono = 0;
+            UltimaFechadeVigencia = DateTime.Now;
         }
 
-        public void AgregarDetalle(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto, DateTime fechadeEmpeño)
+        public void AgregarDetalle(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto)
         {
-            Detalle.Add(new ReciboDetalles(iD,reciboId,articuloId,articulo, descripcion, cantidad, monto, fechadeEmpeño));
+            Detalle.Add(new ReciboDetalles(iD,reciboId,articuloId,articulo, descripcion, cantidad, monto));
         }
 
     }

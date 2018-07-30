@@ -64,7 +64,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (error == 4 && contraseñaTextBox.Text != ConfirmartextBox.Text)
             {
-                GeneralerrorProvider.SetError(ConfirmartextBox, "Llenar Confirmar COntraseña");
+                GeneralerrorProvider.SetError(ConfirmartextBox, "Llenar Confirmar Contraseña");
                 errores = true;
             }
 
