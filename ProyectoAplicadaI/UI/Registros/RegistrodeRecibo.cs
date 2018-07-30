@@ -260,8 +260,21 @@ namespace ProyectoAplicadaI.UI.Registros
                 {
                     detalle = (List<ReciboDetalles>)DetalledataGridView.DataSource;
                 }
-          
 
+
+                ActivodeNegocio negocio = BLL.ActivodeNegocioBLL.Buscar(1);
+
+                if (Convert.ToInt32(montoTextBox.Text) > negocio.Activo)
+                    {
+                        HayErrores.SetError(montoTextBox, "Error");
+                        MessageBox.Show("No Hay esa Cantidad de Dinero Disponiblle!!", "Validación!!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+              
+
+                
+                
                 if (string.IsNullOrEmpty(montoTextBox.Text) && string.IsNullOrEmpty(cantidadNumericUpDown.Text))
                 {
                     MessageBox.Show(" Llene cantidad y Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
