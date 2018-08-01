@@ -1,10 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoAplicadaI.BLL;
-using ProyectoAplicadaI.ENTIDADES;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BLL;
+using ENTIDADES;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ProyectoAplicadaI.BLL.Tests
 {
@@ -19,7 +15,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             articulos.ArticuloId = 0;
             articulos.Nombre = "Plancha";
             articulos.Inventario = 0;
-            paso = BLL.ArticulosBLL.Guardar(articulos);
+            paso = ArticulosBLL.Guardar(articulos);
             Assert.AreEqual(paso,true);
         }
 
@@ -33,7 +29,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             articulos.ArticuloId = 1;
             articulos.Nombre = "tanque";
             articulos.Inventario = 0;
-            paso = BLL.ArticulosBLL.Guardar(articulos);
+            paso = ArticulosBLL.Guardar(articulos);
             Assert.AreEqual(paso, true);
         }
 
@@ -42,7 +38,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             Articulos articulos = new Articulos();
-            articulos = BLL.ArticulosBLL.Buscar(id);
+            articulos = ArticulosBLL.Buscar(id);
 
             Assert.IsNotNull(articulos);
         }
@@ -50,7 +46,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         [TestMethod()]
         public void GetListTest()
         {
-            var LISTAR = BLL.ArticulosBLL.GetList(X=>true );
+            var LISTAR = ArticulosBLL.GetList(X=>true );
             Assert.IsNotNull(LISTAR);
         }
 
@@ -59,7 +55,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             bool paso;
             int id = 2;
-            paso = BLL.ArticulosBLL.Eliminar(id);
+            paso = ArticulosBLL.Eliminar(id);
 
             Assert.AreEqual(paso, true);
         }

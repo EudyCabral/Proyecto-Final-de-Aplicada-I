@@ -1,10 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoAplicadaI.BLL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using ENTIDADES;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace ProyectoAplicadaI.BLL.Tests
 {
@@ -23,7 +21,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             recibos.NombredeCliente = "Albert Lopez";
             recibos.Fecha = DateTime.Now;
             recibos.MontoTotal = 5000;
-            paso = BLL.ReciboBLL.Guardar(recibos);
+            paso = ReciboBLL.Guardar(recibos);
             Assert.AreEqual(paso,true);
         }
 
@@ -38,7 +36,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             recibos.NombredeCliente = "Foketo Lopez";
             recibos.Fecha = DateTime.Now;
             recibos.MontoTotal = 10000;
-            paso = BLL.ReciboBLL.Editar(recibos);
+            paso = ReciboBLL.Editar(recibos);
             Assert.AreEqual(paso, true);
 
         }
@@ -48,7 +46,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             Recibos recibos = new Recibos();
-            recibos = BLL.ReciboBLL.Buscar(id);
+            recibos = ReciboBLL.Buscar(id);
 
             Assert.IsNotNull(recibos);
         }
@@ -58,7 +56,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         [TestMethod()]
         public void GetListTest()
         {
-            var listar = BLL.ReciboBLL.GetList(x => true);
+            var listar = ReciboBLL.GetList(x => true);
             Assert.IsNotNull(listar);
         }
 
@@ -68,7 +66,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             bool paso;
-            paso = BLL.ReciboBLL.Eliminar(id);
+            paso = ReciboBLL.Eliminar(id);
 
             Assert.AreEqual(paso,true);
         }

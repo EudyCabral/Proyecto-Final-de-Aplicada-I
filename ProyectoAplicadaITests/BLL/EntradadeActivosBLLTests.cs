@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoAplicadaI.BLL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using ENTIDADES;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ProyectoAplicadaI.BLL.Tests
 {
@@ -21,7 +18,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             activos.Fecha = DateTime.Now;
             activos.Motivo = "Inicio";
             activos.Suma = 5000;
-            paso = BLL.EntradadeActivosBLL.Guardar(activos);
+            paso = EntradadeActivosBLL.Guardar(activos);
             Assert.AreEqual(paso,true);
         }
 
@@ -37,7 +34,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             activos.Fecha = DateTime.Now;
             activos.Motivo = "Inicio";
             activos.Suma = 2500;
-            paso = BLL.EntradadeActivosBLL.Editar(activos);
+            paso = EntradadeActivosBLL.Editar(activos);
             Assert.AreEqual(paso, true);
         }
 
@@ -46,14 +43,14 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             EntradadeActivos activos = new EntradadeActivos();
-            activos = BLL.EntradadeActivosBLL.Buscar(id);
+            activos = EntradadeActivosBLL.Buscar(id);
             Assert.IsNotNull(activos);
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            var activos = BLL.EntradadeActivosBLL.GetList(x => true);
+            var activos = EntradadeActivosBLL.GetList(x => true);
             Assert.IsNotNull(activos);
         }
 
@@ -62,7 +59,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             bool paso;
-            paso = BLL.EntradadeActivosBLL.Eliminar(id);
+            paso = EntradadeActivosBLL.Eliminar(id);
             Assert.AreEqual(paso,true);
         }
 

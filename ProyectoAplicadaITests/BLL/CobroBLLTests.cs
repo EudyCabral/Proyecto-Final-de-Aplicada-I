@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoAplicadaI.BLL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using ENTIDADES;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ProyectoAplicadaI.BLL.Tests
 {
@@ -21,7 +18,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             cobro.ReciboId = 1;
             cobro.Fecha = DateTime.Now;
             cobro.Abono = 100;
-            paso = BLL.CobroBLL.Guardar(cobro);
+            paso = CobroBLL.Guardar(cobro);
             Assert.AreEqual(paso, true);
         }
 
@@ -37,7 +34,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             cobro.ReciboId = 1;
             cobro.Fecha = DateTime.Now;
             cobro.Abono = 50;
-            paso = BLL.CobroBLL.Editar(cobro);
+            paso = CobroBLL.Editar(cobro);
             Assert.AreEqual(paso, true);
         }
 
@@ -47,7 +44,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             int id = 1;
 
             Pagos cobros = new Pagos();
-            cobros=BLL.CobroBLL.Buscar(id);
+            cobros= CobroBLL.Buscar(id);
             Assert.IsNotNull(cobros);
 
 
@@ -56,7 +53,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         [TestMethod()]
         public void GetListTest()
         {
-            var lista = BLL.CobroBLL.GetList(x => true);
+            var lista = CobroBLL.GetList(x => true);
             Assert.IsNotNull(lista);
         }
 
@@ -66,7 +63,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             int id = 1;
             bool paso;
 
-            paso = BLL.CobroBLL.Eliminar(id);
+            paso = CobroBLL.Eliminar(id);
             Assert.AreEqual(paso,true);
         }
     }

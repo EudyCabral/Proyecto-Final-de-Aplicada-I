@@ -68,6 +68,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2BDA29CD-A781-4C0D-9BB4-934A0EEDB928}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ENTIDADES\ENTIDADES.csproj">
+      <Project>{8CDBA1FE-5F4C-482C-8AD1-E8F9624DD355}</Project>
+      <Name>ENTIDADES</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProyectoAplicadaI\ProyectoAplicadaI.csproj">
       <Project>{CBF1A182-28B5-41D9-A36C-20188F13D689}</Project>
       <Name>ProyectoAplicadaI</Name>

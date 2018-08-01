@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProyectoAplicadaI.BLL;
-using ProyectoAplicadaI.ENTIDADES;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BLL;
+using ENTIDADES;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace ProyectoAplicadaI.BLL.Tests
 {
@@ -21,7 +18,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             usuarios.Usuario = "Eudy02";
             usuarios.Contraseña = "122017";
             usuarios.Tipodeusuario = "Admin";
-            paso = BLL.UsuariosBLL.Guardar(usuarios);
+            paso = UsuariosBLL.Guardar(usuarios);
             Assert.AreEqual(paso,true);
         }
 
@@ -36,7 +33,7 @@ namespace ProyectoAplicadaI.BLL.Tests
             usuarios.Usuario = "Eudes02";
             usuarios.Contraseña = "122017";
             usuarios.Tipodeusuario = "Admin";
-            paso = BLL.UsuariosBLL.Guardar(usuarios);
+            paso = UsuariosBLL.Guardar(usuarios);
             Assert.AreEqual(paso, true);
         }
 
@@ -45,14 +42,14 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             int id = 1;
             Usuarios usuarios = new Usuarios();
-            usuarios = BLL.UsuariosBLL.Buscar(id);
+            usuarios = UsuariosBLL.Buscar(id);
             Assert.IsNotNull(usuarios);
         }
 
         [TestMethod()]
         public void GetListTest()
         {
-            var listar = BLL.UsuariosBLL.GetList(x => true);
+            var listar = UsuariosBLL.GetList(x => true);
             Assert.IsNotNull(listar);
         }
 
@@ -61,7 +58,7 @@ namespace ProyectoAplicadaI.BLL.Tests
         {
             bool paso;
             int id = 1;
-            paso = BLL.UsuariosBLL.Eliminar(id);
+            paso = UsuariosBLL.Eliminar(id);
             Assert.AreEqual(paso,true);
         }
 
