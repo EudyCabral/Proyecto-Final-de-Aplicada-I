@@ -1,11 +1,7 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using ENTIDADES;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Cuenta
@@ -19,7 +15,7 @@ namespace ProyectoAplicadaI.UI.Cuenta
 
         private void Capital_Load(object sender, EventArgs e)
         {
-            ActivodeNegocio activodenegocio = BLL.ActivodeNegocioBLL.Buscar(1);
+            ActivodeNegocio activodenegocio = ActivodeNegocioBLL.Buscar(1);
             activolabel.Text = 0.ToString();
             activolabel.Text = $"${activodenegocio.Activo.ToString()}";
             activolabel.ForeColor = Color.Green;
@@ -27,7 +23,7 @@ namespace ProyectoAplicadaI.UI.Cuenta
 
         private void updatebutton_Click(object sender, EventArgs e)
         {
-            ActivodeNegocio activodenegocio = BLL.ActivodeNegocioBLL.Buscar(1);
+            ActivodeNegocio activodenegocio = ActivodeNegocioBLL.Buscar(1);
             activolabel.Text = 0.ToString();
             activolabel.Text = $"${activodenegocio.Activo.ToString()}";
             activolabel.ForeColor = Color.Green;

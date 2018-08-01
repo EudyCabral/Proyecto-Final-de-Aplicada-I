@@ -1,15 +1,8 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
-using ProyectoAplicadaI.UI.Cobro;
+﻿using ProyectoAplicadaI.UI.Cobro;
 using ProyectoAplicadaI.UI.Consultas;
 using ProyectoAplicadaI.UI.Cuenta;
 using ProyectoAplicadaI.UI.Registros;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI

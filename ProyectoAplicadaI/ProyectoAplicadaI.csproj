@@ -57,25 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ArticulosBLL.cs" />
-    <Compile Include="BLL\ActivodeNegocioBLL.cs" />
-    <Compile Include="BLL\ClienteBLL.cs" />
-    <Compile Include="BLL\CobroBLL.cs" />
-    <Compile Include="BLL\EntradadeActivosBLL.cs" />
-    <Compile Include="BLL\ReciboBLL.cs" />
-    <Compile Include="BLL\ReciboDetallesBLL.cs" />
-    <Compile Include="BLL\UsuariosBLL.cs" />
-    <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="DAL\IRepository.cs" />
-    <Compile Include="DAL\Repositorio.cs" />
-    <Compile Include="ENTIDADES\Articulos.cs" />
-    <Compile Include="ENTIDADES\ActivodeNegocio.cs" />
-    <Compile Include="ENTIDADES\Clientes.cs" />
-    <Compile Include="ENTIDADES\EntradadeActivos.cs" />
-    <Compile Include="ENTIDADES\Pagos.cs" />
-    <Compile Include="ENTIDADES\Recibos.cs" />
-    <Compile Include="ENTIDADES\ReciboDetalles.cs" />
-    <Compile Include="ENTIDADES\Usuarios.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,7 +447,18 @@
     <None Include="Resources\icons8_Login_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Scripts\Scripts.sql" />
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2bda29cd-a781-4c0d-9bb4-934a0eedb928}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{A1F0F6A3-6D55-4A69-984C-40683A9198EC}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ENTIDADES\ENTIDADES.csproj">
+      <Project>{8cdba1fe-5f4c-482c-8ad1-e8f9624dd355}</Project>
+      <Name>ENTIDADES</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,18 +1,19 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿
+using DAL;
+using ENTIDADES;
+//using ENTIDADES;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace ProyectoAplicadaI.BLL
+
+namespace BLL
 {
-    public class ClienteBLL
+    public class ArticulosBLL
     {
-
-        public static bool Guardar(Clientes cliente)
+        public static bool Guardar(Articulos articulos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -20,7 +21,7 @@ namespace ProyectoAplicadaI.BLL
             try
             {
 
-                if (contexto.clientes.Add(cliente) != null)
+                if (contexto.articulos.Add(articulos) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -42,11 +43,11 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                Clientes cliente = contexto.clientes.Find(id);
+                Articulos articulos = contexto.articulos.Find(id);
 
-                if (cliente != null)
+                if (articulos != null)
                 {
-                    contexto.Entry(cliente).State = EntityState.Deleted;
+                    contexto.Entry(articulos).State = EntityState.Deleted;
                 }
 
                 if (contexto.SaveChanges() > 0)
@@ -64,7 +65,7 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static bool Editar(Clientes cliente)
+        public static bool Editar(Articulos articulos)
         {
 
             bool paso = false;
@@ -72,7 +73,7 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                contexto.Entry(cliente).State = EntityState.Modified;
+                contexto.Entry(articulos).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -88,37 +89,37 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static   Clientes Buscar(int id)
+        public static Articulos Buscar(int id)
         {
 
-           Clientes cliente = new Clientes();
+            Articulos articulos = new Articulos();
             Contexto contexto = new Contexto();
 
             try
             {
-                cliente = contexto.clientes.Find(id);
+                articulos = contexto.articulos.Find(id);
                 contexto.Dispose();
             }
             catch (Exception) { throw; }
-            return cliente;
+            return articulos;
 
         }
 
 
 
-        public static List<Clientes> GetList(Expression<Func<Clientes, bool>> expression)
+        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
         {
-            List<Clientes> cliente = new List<Clientes>();
+            List<Articulos> articulos = new List<Articulos>();
             Contexto contexto = new Contexto();
 
             try
             {
-                cliente = contexto.clientes.Where(expression).ToList();
+                articulos = contexto.articulos.Where(expression).ToList();
                 contexto.Dispose();
 
             }
             catch (Exception) { throw; }
-            return cliente;
+            return articulos;
         }
 
         public static string RetornarNombre(string nombre)

@@ -1,11 +1,8 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
-using System;
-using System.Collections.Generic;
+﻿
+using ENTIDADES;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
 
-namespace ProyectoAplicadaI.DAL
+namespace DAL
 {
    public class Contexto : DbContext
     {

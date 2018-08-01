@@ -1,13 +1,14 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿
+using DAL;
+using ENTIDADES;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace ProyectoAplicadaI.BLL
+
+namespace BLL
 {
     public class CobroBLL
     {
@@ -43,8 +44,11 @@ namespace ProyectoAplicadaI.BLL
                     foreach (var item in BLL.ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
                     {
                         contexto.recibos.Find(cobro.ReciboId).UltimaFechadeVigencia = item.UltimaFechadeVigencia.AddDays(AumentoDias(cobro.Abono,item.MontoTotal));
+
+                      
                     }
                     
+                  
                     contexto.activodenegocio.Find(cobro.ActivodeNegocioId).Activo += cobro.Abono;
 
                     contexto.SaveChanges();

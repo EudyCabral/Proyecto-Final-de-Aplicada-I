@@ -83,7 +83,7 @@ create table Usuarios
 );
 go
 
-insert into Usuarios(Nombre,Usuario,Contraseña,Tipodeusuario) Values('Eudy Cabral','Eudy','122017','Administrador');
+insert into Usuarios(Nombre,Usuario,Contraseña,Tipodeusuario) Values('Root','root','admin','Administrador');
 
 go
 create table EntradadeActivos
@@ -100,9 +100,9 @@ go
 
 
 go
-create table Cobros
+create table Pagos
 (
-            CobroId int primary key Identity(1,1),
+            PagosId int primary key Identity(1,1),
             ReciboId int,
 			ActivodeNegocioId int,
             Fecha Date,
@@ -118,15 +118,21 @@ select *from Usuarios
 
 Select* from ReciboDetalles
 Select* from Recibos
-select *from Cobros
+select *from Pagos
 select *from ActivodeNegocios
 select *from Articulos
 
+select c.nombre from Clientes c
 
+select c.ClienteId,C.Nombre,r.ReciboId,r.Fecha,r.MontoTotal,r.Abono
+ from Clientes c inner join Recibos r on c.ClienteId = r.ClienteId  inner join Pagos p on p.ReciboId = r.ReciboId where c.ClienteId = 2
+
+ delete from Recibos  where ReciboId =0;
 
 truncate table EntradadeActivos
 truncate table Clientes
-truncate table Cobros
+truncate table Pagos
+truncate table Usuarios
 
 truncate table ReciboDetalles
 truncate table Recibos

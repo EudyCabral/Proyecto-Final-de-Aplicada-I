@@ -1,17 +1,19 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿
+using DAL;
+using ENTIDADES;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace ProyectoAplicadaI.BLL
+
+namespace BLL
 {
-    public class UsuariosBLL
+    public class ClienteBLL
     {
-        public static bool Guardar(Usuarios usuario)
+
+        public static bool Guardar(Clientes cliente)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -19,7 +21,7 @@ namespace ProyectoAplicadaI.BLL
             try
             {
 
-                if (contexto.usuarios.Add(usuario) != null)
+                if (contexto.clientes.Add(cliente) != null)
                 {
                     contexto.SaveChanges();
                     paso = true;
@@ -41,11 +43,11 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                Usuarios usuarios = contexto.usuarios.Find(id);
+                Clientes cliente = contexto.clientes.Find(id);
 
-                if (usuarios != null)
+                if (cliente != null)
                 {
-                    contexto.Entry(usuarios).State = EntityState.Deleted;
+                    contexto.Entry(cliente).State = EntityState.Deleted;
                 }
 
                 if (contexto.SaveChanges() > 0)
@@ -63,7 +65,7 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static bool Editar(Usuarios usuarios)
+        public static bool Editar(Clientes cliente)
         {
 
             bool paso = false;
@@ -71,7 +73,7 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                contexto.Entry(usuarios).State = EntityState.Modified;
+                contexto.Entry(cliente).State = EntityState.Modified;
 
                 if (contexto.SaveChanges() > 0)
                 {
@@ -87,37 +89,49 @@ namespace ProyectoAplicadaI.BLL
 
 
 
-        public static Usuarios Buscar(int id)
+        public static   Clientes Buscar(int id)
         {
 
-            Usuarios usuarios = new Usuarios();
+           Clientes cliente = new Clientes();
             Contexto contexto = new Contexto();
 
             try
             {
-                usuarios = contexto.usuarios.Find(id);
+                cliente = contexto.clientes.Find(id);
                 contexto.Dispose();
             }
             catch (Exception) { throw; }
-            return usuarios;
+            return cliente;
 
         }
 
 
 
-        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> expression)
+        public static List<Clientes> GetList(Expression<Func<Clientes, bool>> expression)
         {
-            List<Usuarios> usuarios = new List<Usuarios>();
+            List<Clientes> cliente = new List<Clientes>();
             Contexto contexto = new Contexto();
 
             try
             {
-                usuarios = contexto.usuarios.Where(expression).ToList();
+                cliente = contexto.clientes.Where(expression).ToList();
                 contexto.Dispose();
 
             }
             catch (Exception) { throw; }
-            return usuarios;
+            return cliente;
+        }
+
+        public static string RetornarNombre(string nombre)
+        {
+            string descripcion = string.Empty;
+            var lista = GetList(x => x.Nombre.Equals(nombre));
+            foreach (var item in lista)
+            {
+                descripcion = item.Nombre;
+            }
+
+            return descripcion;
         }
     }
 }

@@ -1,13 +1,11 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using DAL;
+using ENTIDADES;
 using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Registros
@@ -260,21 +258,23 @@ namespace ProyectoAplicadaI.UI.Registros
                 {
                     detalle = (List<ReciboDetalles>)DetalledataGridView.DataSource;
                 }
+               
 
+                 ActivodeNegocio negocio = BLL.ActivodeNegocioBLL.Buscar(1);
 
-                ActivodeNegocio negocio = BLL.ActivodeNegocioBLL.Buscar(1);
+                 if (Convert.ToDecimal(montoTextBox.Text) > negocio.Activo)
+                     {
+                         HayErrores.SetError(montoTextBox, "Error");
+                         MessageBox.Show("No Hay esa Cantidad de Dinero Disponiblle!!", "Validación!!",
+                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         return;
+                     }
+               
 
-                if (Convert.ToInt32(montoTextBox.Text) > negocio.Activo)
-                    {
-                        HayErrores.SetError(montoTextBox, "Error");
-                        MessageBox.Show("No Hay esa Cantidad de Dinero Disponiblle!!", "Validación!!",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-              
 
                 
-                
+
+
                 if (string.IsNullOrEmpty(montoTextBox.Text) && string.IsNullOrEmpty(cantidadNumericUpDown.Text))
                 {
                     MessageBox.Show(" Llene cantidad y Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);

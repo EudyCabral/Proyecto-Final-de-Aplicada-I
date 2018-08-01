@@ -1,12 +1,10 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
+﻿
+using ENTIDADES;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Cobro
@@ -168,6 +166,8 @@ namespace ProyectoAplicadaI.UI.Cobro
             {
                 res = monto * Convert.ToDecimal(0.05);
                 monto += res;
+
+                
             }
 
             if (resultado >= 15 && resultado <= 30)
@@ -202,6 +202,7 @@ namespace ProyectoAplicadaI.UI.Cobro
           
             return monto;
         }
+        
         public void NoColumnas()
         {
             CobrosdataGridView.Columns["ID"].Visible = false;
@@ -277,6 +278,7 @@ namespace ProyectoAplicadaI.UI.Cobro
                     if (entry != null)
                     {
                         paso = BLL.CobroBLL.Editar(Llenaclase());
+                        
                     }
                     else
                     {

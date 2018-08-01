@@ -1,17 +1,18 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿
+using DAL;
+using ENTIDADES;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace ProyectoAplicadaI.BLL
+
+namespace BLL
 {
-    public class ArticulosBLL
+    public class ActivodeNegocioBLL
     {
-        public static bool Guardar(Articulos articulos)
+        public static bool Guardar(ActivodeNegocio capitaldenegocio)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -19,9 +20,34 @@ namespace ProyectoAplicadaI.BLL
             try
             {
 
-                if (contexto.articulos.Add(articulos) != null)
+                if (contexto.activodenegocio.Add(capitaldenegocio) != null)
                 {
                     contexto.SaveChanges();
+                    paso = true;
+                }
+                contexto.Dispose();
+
+            }
+            catch (Exception) { throw; }
+
+            return paso;
+        }
+
+
+
+
+        public static bool Editar(ActivodeNegocio capitaldenegocio)
+        {
+
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                contexto.Entry(capitaldenegocio).State = EntityState.Modified;
+
+                if (contexto.SaveChanges() > 0)
+                {
                     paso = true;
                 }
                 contexto.Dispose();
@@ -41,11 +67,11 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                Articulos articulos = contexto.articulos.Find(id);
+                ActivodeNegocio capitaldenegocio = contexto.activodenegocio.Find(id);
 
-                if (articulos != null)
+                if (capitaldenegocio != null)
                 {
-                    contexto.Entry(articulos).State = EntityState.Deleted;
+                    contexto.Entry(capitaldenegocio).State = EntityState.Deleted;
                 }
 
                 if (contexto.SaveChanges() > 0)
@@ -62,74 +88,37 @@ namespace ProyectoAplicadaI.BLL
         }
 
 
-
-        public static bool Editar(Articulos articulos)
+        public static ActivodeNegocio Buscar(int id)
         {
 
-            bool paso = false;
+           ActivodeNegocio capitaldeNegocio = new ActivodeNegocio();
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Entry(articulos).State = EntityState.Modified;
-
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
-
-            }
-            catch (Exception) { throw; }
-
-            return paso;
-        }
-
-
-
-        public static Articulos Buscar(int id)
-        {
-
-            Articulos articulos = new Articulos();
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                articulos = contexto.articulos.Find(id);
+                capitaldeNegocio = contexto.activodenegocio.Find(id);
                 contexto.Dispose();
             }
             catch (Exception) { throw; }
-            return articulos;
+            return capitaldeNegocio;
 
         }
 
 
 
-        public static List<Articulos> GetList(Expression<Func<Articulos, bool>> expression)
+        public static List<ActivodeNegocio> GetList(Expression<Func<ActivodeNegocio, bool>> expression)
         {
-            List<Articulos> articulos = new List<Articulos>();
+            List<ActivodeNegocio> capitaldeNegocios = new List<ActivodeNegocio>();
             Contexto contexto = new Contexto();
 
             try
             {
-                articulos = contexto.articulos.Where(expression).ToList();
+                capitaldeNegocios = contexto.activodenegocio.Where(expression).ToList();
                 contexto.Dispose();
 
             }
             catch (Exception) { throw; }
-            return articulos;
-        }
-
-        public static string RetornarNombre(string nombre)
-        {
-            string descripcion = string.Empty;
-            var lista = GetList(x => x.Nombre.Equals(nombre));
-            foreach (var item in lista)
-            {
-                descripcion = item.Nombre;
-            }
-
-            return descripcion;
+            return capitaldeNegocios;
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
+﻿using BLL;
+using ENTIDADES;
 using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Consultas
@@ -44,7 +40,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         filtro = x => x.ArticuloId == id;
 
-                        if (BLL.ArticulosBLL.GetList(filtro).Count() == 0)
+                        if (ArticulosBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -70,7 +66,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     {
                         filtro = x => x.Nombre.Contains(CriteriotextBox.Text);
 
-                        if (BLL.ArticulosBLL.GetList(filtro).Count() == 0)
+                        if (ArticulosBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Esta Descripcion, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -96,7 +92,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                         filtro = x => x.Inventario == inventario;
 
 
-                        if (BLL.ArticulosBLL.GetList(filtro).Count() == 0)
+                        if (ArticulosBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -107,7 +103,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                 case 3://todo
                     
                     filtro = x => true;
-                    if (BLL.ArticulosBLL.GetList(filtro).Count() == 0)
+                    if (ArticulosBLL.GetList(filtro).Count() == 0)
                     {
                         MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -118,7 +114,7 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
             if (FiltrocomboBox.SelectedItem != null)
             {
-                ArticulosdataGridView.DataSource = BLL.ArticulosBLL.GetList(filtro);
+                ArticulosdataGridView.DataSource = ArticulosBLL.GetList(filtro);
                 CriteriotextBox.Clear();
                 GeneralerrorProvider.Clear();
             }
@@ -160,7 +156,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
             if (ArticulosdataGridView.DataSource != null)
             {
-                ArticulosReporte abrir = new ArticulosReporte(BLL.ArticulosBLL.GetList(filtro));
+                ArticulosReporte abrir = new ArticulosReporte(ArticulosBLL.GetList(filtro));
                 {
                     abrir.Show();
                 }

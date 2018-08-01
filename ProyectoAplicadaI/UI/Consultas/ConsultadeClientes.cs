@@ -1,13 +1,11 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
+﻿
+using BLL;
+using ENTIDADES;
 using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
+
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Consultas
@@ -73,7 +71,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                         filtro = x => x.Nombre.Contains(CriteriotextBox.Text);
 
 
-                        if (BLL.ClienteBLL.GetList(filtro).Count() == 0)
+                        if (ClienteBLL.GetList(filtro).Count() == 0)
                         {
                             MessageBox.Show("Este Nombre, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -212,7 +210,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
             if (ClientesdataGridView.DataSource != null)
             {
-                ClienteReporte abrir = new ClienteReporte(BLL.ClienteBLL.GetList(filtro));
+                ClienteReporte abrir = new ClienteReporte(ClienteBLL.GetList(filtro));
                 {
                     abrir.Show();
                 }

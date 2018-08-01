@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 
-namespace ProyectoAplicadaI.ENTIDADES
+using System.ComponentModel.DataAnnotations;
+
+
+namespace ENTIDADES
 {
     public class Pagos
     {

@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace ProyectoAplicadaI.ENTIDADES
+using System.ComponentModel.DataAnnotations;
+
+
+namespace ENTIDADES
 {
     public class EntradadeActivos
     {
+        [Key]
         public int EntradadeActivosId { get; set; }
         public DateTime Fecha { get; set; }
         public int ActivodeNegocioId { get; set; }

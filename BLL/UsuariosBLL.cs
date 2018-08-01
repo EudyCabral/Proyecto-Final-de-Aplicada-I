@@ -1,17 +1,18 @@
-﻿using ProyectoAplicadaI.DAL;
-using ProyectoAplicadaI.ENTIDADES;
+﻿
+using DAL;
+using ENTIDADES;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace ProyectoAplicadaI.BLL
+
+namespace BLL
 {
-    public class ActivodeNegocioBLL
+    public class UsuariosBLL
     {
-        public static bool Guardar(ActivodeNegocio capitaldenegocio)
+        public static bool Guardar(Usuarios usuario)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -19,34 +20,9 @@ namespace ProyectoAplicadaI.BLL
             try
             {
 
-                if (contexto.activodenegocio.Add(capitaldenegocio) != null)
+                if (contexto.usuarios.Add(usuario) != null)
                 {
                     contexto.SaveChanges();
-                    paso = true;
-                }
-                contexto.Dispose();
-
-            }
-            catch (Exception) { throw; }
-
-            return paso;
-        }
-
-
-
-
-        public static bool Editar(ActivodeNegocio capitaldenegocio)
-        {
-
-            bool paso = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                contexto.Entry(capitaldenegocio).State = EntityState.Modified;
-
-                if (contexto.SaveChanges() > 0)
-                {
                     paso = true;
                 }
                 contexto.Dispose();
@@ -66,11 +42,11 @@ namespace ProyectoAplicadaI.BLL
 
             try
             {
-                ActivodeNegocio capitaldenegocio = contexto.activodenegocio.Find(id);
+                Usuarios usuarios = contexto.usuarios.Find(id);
 
-                if (capitaldenegocio != null)
+                if (usuarios != null)
                 {
-                    contexto.Entry(capitaldenegocio).State = EntityState.Deleted;
+                    contexto.Entry(usuarios).State = EntityState.Deleted;
                 }
 
                 if (contexto.SaveChanges() > 0)
@@ -87,37 +63,62 @@ namespace ProyectoAplicadaI.BLL
         }
 
 
-        public static ActivodeNegocio Buscar(int id)
+
+        public static bool Editar(Usuarios usuarios)
         {
 
-           ActivodeNegocio capitaldeNegocio = new ActivodeNegocio();
+            bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                capitaldeNegocio = contexto.activodenegocio.Find(id);
+                contexto.Entry(usuarios).State = EntityState.Modified;
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
+
+            }
+            catch (Exception) { throw; }
+
+            return paso;
+        }
+
+
+
+        public static Usuarios Buscar(int id)
+        {
+
+            Usuarios usuarios = new Usuarios();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                usuarios = contexto.usuarios.Find(id);
                 contexto.Dispose();
             }
             catch (Exception) { throw; }
-            return capitaldeNegocio;
+            return usuarios;
 
         }
 
 
 
-        public static List<ActivodeNegocio> GetList(Expression<Func<ActivodeNegocio, bool>> expression)
+        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> expression)
         {
-            List<ActivodeNegocio> capitaldeNegocios = new List<ActivodeNegocio>();
+            List<Usuarios> usuarios = new List<Usuarios>();
             Contexto contexto = new Contexto();
 
             try
             {
-                capitaldeNegocios = contexto.activodenegocio.Where(expression).ToList();
+                usuarios = contexto.usuarios.Where(expression).ToList();
                 contexto.Dispose();
 
             }
             catch (Exception) { throw; }
-            return capitaldeNegocios;
+            return usuarios;
         }
     }
 }

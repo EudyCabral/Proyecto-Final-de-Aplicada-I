@@ -1,13 +1,9 @@
-﻿using ProyectoAplicadaI.ENTIDADES;
+﻿using ENTIDADES;
 using ProyectoAplicadaI.UI.VentanasReportes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ProyectoAplicadaI.UI.Consultas
