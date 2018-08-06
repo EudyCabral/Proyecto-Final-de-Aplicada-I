@@ -100,6 +100,35 @@ namespace BLL
             return paso;
         }
 
+        public static bool EliminarParaCobro(int id)
+        {
+
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                Recibos recibos = contexto.recibos.Find(id);
+
+                if (recibos != null)
+                {
+                    recibos.Detalle.Count();
+                    contexto.recibos.Remove(recibos);
+
+                }
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                    contexto.Dispose();
+                }
+
+
+            }
+            catch (Exception) { throw; }
+
+            return paso;
+        }
 
 
 
@@ -138,7 +167,7 @@ namespace BLL
 
             try
             {
-                var recibos = BLL.ReciboBLL.Buscar(recibo.ReciboId);
+                var recibos = ReciboBLL.Buscar(recibo.ReciboId);
 
 
                 if (recibos != null)
@@ -177,7 +206,7 @@ namespace BLL
 
 
 
-                    Recibos EntradaAnterior = BLL.ReciboBLL.Buscar(recibo.ReciboId);
+                    Recibos EntradaAnterior = Buscar(recibo.ReciboId);
                   
 
                     //identificar la diferencia ya sea restada o sumada

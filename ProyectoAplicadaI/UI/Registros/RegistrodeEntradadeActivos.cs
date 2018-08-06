@@ -1,5 +1,4 @@
-﻿
-using ENTIDADES;
+﻿using ENTIDADES;
 using System;
 using System.Windows.Forms;
 
@@ -31,22 +30,25 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             bool errores = false;
             decimal num = 0;
+            int n = 0;
             if (error == 1 && entradadeActivosIdNumericUpDown.Value == 0)
             {
-                GeneralerrorProvider.SetError(entradadeActivosIdNumericUpDown, "Llenar Usuario Id");
+                GeneralerrorProvider.SetError(entradadeActivosIdNumericUpDown, "Llenar Entrada Id");
                 errores = true;
             }
 
 
             if (error == 2 && string.IsNullOrWhiteSpace(motivoTextBox.Text))
             {
-                GeneralerrorProvider.SetError(motivoTextBox, "Llene Usuario");
+                GeneralerrorProvider.SetError(motivoTextBox, "Llene Motivo");
                 errores = true;
             }
 
+           
+
             if (error == 2 && string.IsNullOrWhiteSpace(sumaTextBox.Text)  )
             {
-                GeneralerrorProvider.SetError(sumaTextBox, "Llene contraseña");
+                GeneralerrorProvider.SetError(sumaTextBox, "Llene suma");
                 errores = true;
             }
 
@@ -65,6 +67,11 @@ namespace ProyectoAplicadaI.UI.Registros
                 errores = true;
             }
 
+            if (error == 5 && int.TryParse(motivoTextBox.Text, out n) == true)
+            {
+                GeneralerrorProvider.SetError(motivoTextBox, "Debe Digitar Caracteres");
+                errores = true;
+            }
 
 
             return errores;
@@ -91,21 +98,27 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (validar(3))
                     {
-                        MessageBox.Show("Dijite un Monto");
+                        MessageBox.Show("Dijite un Monto","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         return;
                     }
 
             if (validar(4))
             {
-                MessageBox.Show("Dijite una Suma mayor que 0","Validar");
+                MessageBox.Show("Dijite una Suma mayor que 0", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (validar(2))
             {
-                MessageBox.Show("Favor de Llenar las Casillas");
+                MessageBox.Show("Favor de Llenar las Casillas", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-        
+
+            if (validar(5))
+            {
+                MessageBox.Show("Debeje decir el Motivo Use Caracteres", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             else
             {
                 bool paso = false;
@@ -128,7 +141,7 @@ namespace ProyectoAplicadaI.UI.Registros
                     }
                     else
                         MessageBox.Show("Id no existe", "Falló",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 
@@ -150,7 +163,7 @@ namespace ProyectoAplicadaI.UI.Registros
            
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar");
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -167,7 +180,7 @@ namespace ProyectoAplicadaI.UI.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 GeneralerrorProvider.Clear();
             }
@@ -177,7 +190,7 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar casilla para poder Eliminar");
+                MessageBox.Show("Favor de Llenar casilla para poder Eliminar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

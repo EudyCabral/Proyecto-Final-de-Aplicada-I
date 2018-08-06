@@ -47,14 +47,14 @@
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(100, 20);
-            this.ClavetextBox.TabIndex = 9;
+            this.ClavetextBox.TabIndex = 1;
             // 
             // UsuariotextBox
             // 
             this.UsuariotextBox.Location = new System.Drawing.Point(105, 114);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(100, 20);
-            this.UsuariotextBox.TabIndex = 8;
+            this.UsuariotextBox.TabIndex = 0;
             // 
             // Iniciarbutton
             // 
@@ -66,7 +66,7 @@
             this.Iniciarbutton.Location = new System.Drawing.Point(105, 176);
             this.Iniciarbutton.Name = "Iniciarbutton";
             this.Iniciarbutton.Size = new System.Drawing.Size(100, 37);
-            this.Iniciarbutton.TabIndex = 10;
+            this.Iniciarbutton.TabIndex = 2;
             this.Iniciarbutton.Text = "Iniciar ";
             this.Iniciarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Iniciarbutton.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.Cancelarbutton.Location = new System.Drawing.Point(105, 219);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(100, 37);
-            this.Cancelarbutton.TabIndex = 11;
+            this.Cancelarbutton.TabIndex = 3;
             this.Cancelarbutton.Text = "Cancelar";
             this.Cancelarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cancelarbutton.UseVisualStyleBackColor = true;

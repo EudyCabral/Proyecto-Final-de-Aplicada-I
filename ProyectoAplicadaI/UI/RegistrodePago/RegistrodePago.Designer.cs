@@ -74,7 +74,7 @@
             cobroIdLabel.Location = new System.Drawing.Point(5, 18);
             cobroIdLabel.Name = "cobroIdLabel";
             cobroIdLabel.Size = new System.Drawing.Size(50, 13);
-            cobroIdLabel.TabIndex = 21;
+            cobroIdLabel.TabIndex = 16;
             cobroIdLabel.Text = "Cobro Id:";
             // 
             // abonoLabel
@@ -83,7 +83,7 @@
             abonoLabel.Location = new System.Drawing.Point(590, 434);
             abonoLabel.Name = "abonoLabel";
             abonoLabel.Size = new System.Drawing.Size(35, 13);
-            abonoLabel.TabIndex = 22;
+            abonoLabel.TabIndex = 26;
             abonoLabel.Text = "Pago:";
             // 
             // fechaLabel
@@ -92,7 +92,7 @@
             fechaLabel.Location = new System.Drawing.Point(572, 9);
             fechaLabel.Name = "fechaLabel";
             fechaLabel.Size = new System.Drawing.Size(40, 13);
-            fechaLabel.TabIndex = 23;
+            fechaLabel.TabIndex = 22;
             fechaLabel.Text = "Fecha:";
             // 
             // label6
@@ -101,7 +101,7 @@
             label6.Location = new System.Drawing.Point(426, 410);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(53, 13);
-            label6.TabIndex = 27;
+            label6.TabIndex = 24;
             label6.Text = "Abonado:";
             // 
             // estadodelArticuloLabel
@@ -110,7 +110,7 @@
             estadodelArticuloLabel.Location = new System.Drawing.Point(574, 33);
             estadodelArticuloLabel.Name = "estadodelArticuloLabel";
             estadodelArticuloLabel.Size = new System.Drawing.Size(95, 13);
-            estadodelArticuloLabel.TabIndex = 32;
+            estadodelArticuloLabel.TabIndex = 23;
             estadodelArticuloLabel.Text = "Estadodel Articulo:";
             // 
             // FiltrocomboBox
@@ -122,7 +122,7 @@
             this.FiltrocomboBox.Location = new System.Drawing.Point(55, 55);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(163, 21);
-            this.FiltrocomboBox.TabIndex = 0;
+            this.FiltrocomboBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -130,7 +130,7 @@
             this.label1.Location = new System.Drawing.Point(5, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 17;
             this.label1.Text = "Filtro:";
             // 
             // label2
@@ -139,7 +139,7 @@
             this.label2.Location = new System.Drawing.Point(230, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 18;
             this.label2.Text = "Criterio:";
             // 
             // CriteriotextBox
@@ -157,7 +157,7 @@
             this.FechacheckBox.Location = new System.Drawing.Point(55, 79);
             this.FechacheckBox.Name = "FechacheckBox";
             this.FechacheckBox.Size = new System.Drawing.Size(56, 17);
-            this.FechacheckBox.TabIndex = 5;
+            this.FechacheckBox.TabIndex = 4;
             this.FechacheckBox.Text = "Fecha";
             this.FechacheckBox.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +167,7 @@
             this.DesdedateTimePicker.Location = new System.Drawing.Point(55, 97);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(121, 20);
-            this.DesdedateTimePicker.TabIndex = 6;
+            this.DesdedateTimePicker.TabIndex = 5;
             // 
             // HastadateTimePicker
             // 
@@ -175,7 +175,7 @@
             this.HastadateTimePicker.Location = new System.Drawing.Point(246, 97);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(121, 20);
-            this.HastadateTimePicker.TabIndex = 7;
+            this.HastadateTimePicker.TabIndex = 6;
             // 
             // CobrosdataGridView
             // 
@@ -186,7 +186,7 @@
             this.CobrosdataGridView.Name = "CobrosdataGridView";
             this.CobrosdataGridView.ReadOnly = true;
             this.CobrosdataGridView.Size = new System.Drawing.Size(744, 275);
-            this.CobrosdataGridView.TabIndex = 8;
+            this.CobrosdataGridView.TabIndex = 0;
             this.CobrosdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label3
@@ -195,7 +195,7 @@
             this.label3.Location = new System.Drawing.Point(5, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 19;
             this.label3.Text = "Desde :";
             // 
             // label4
@@ -204,12 +204,13 @@
             this.label4.Location = new System.Drawing.Point(202, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 20;
             this.label4.Text = "Hasta:";
             // 
             // GeneralerrorProvider
             // 
             this.GeneralerrorProvider.ContainerControl = this;
+            this.GeneralerrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("GeneralerrorProvider.Icon")));
             // 
             // deudatextBox
             // 
@@ -217,31 +218,36 @@
             this.deudatextBox.Name = "deudatextBox";
             this.deudatextBox.ReadOnly = true;
             this.deudatextBox.Size = new System.Drawing.Size(100, 20);
-            this.deudatextBox.TabIndex = 15;
+            this.deudatextBox.TabIndex = 12;
             this.deudatextBox.TextChanged += new System.EventHandler(this.deudatextBox_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(593, 410);
+            this.label5.Location = new System.Drawing.Point(590, 410);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Deuda";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Deuda :";
             // 
             // cobroIdNumericUpDown
             // 
             this.cobroIdNumericUpDown.Location = new System.Drawing.Point(55, 14);
+            this.cobroIdNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.cobroIdNumericUpDown.Name = "cobroIdNumericUpDown";
             this.cobroIdNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.cobroIdNumericUpDown.TabIndex = 22;
+            this.cobroIdNumericUpDown.TabIndex = 0;
             // 
             // PagosTextBox
             // 
             this.PagosTextBox.Location = new System.Drawing.Point(637, 431);
             this.PagosTextBox.Name = "PagosTextBox";
             this.PagosTextBox.Size = new System.Drawing.Size(100, 20);
-            this.PagosTextBox.TabIndex = 23;
+            this.PagosTextBox.TabIndex = 8;
             this.PagosTextBox.TextChanged += new System.EventHandler(this.PagosTextBox_TextChanged);
             // 
             // fechaDateTimePicker
@@ -250,7 +256,7 @@
             this.fechaDateTimePicker.Location = new System.Drawing.Point(618, 7);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(103, 20);
-            this.fechaDateTimePicker.TabIndex = 24;
+            this.fechaDateTimePicker.TabIndex = 14;
             // 
             // AbonostextBox
             // 
@@ -258,7 +264,7 @@
             this.AbonostextBox.Name = "AbonostextBox";
             this.AbonostextBox.ReadOnly = true;
             this.AbonostextBox.Size = new System.Drawing.Size(100, 20);
-            this.AbonostextBox.TabIndex = 28;
+            this.AbonostextBox.TabIndex = 13;
             // 
             // estadolabel
             // 
@@ -266,7 +272,7 @@
             this.estadolabel.Location = new System.Drawing.Point(678, 35);
             this.estadolabel.Name = "estadolabel";
             this.estadolabel.Size = new System.Drawing.Size(0, 13);
-            this.estadolabel.TabIndex = 33;
+            this.estadolabel.TabIndex = 15;
             // 
             // Buscarcobrobutton
             // 
@@ -277,7 +283,7 @@
             this.Buscarcobrobutton.Location = new System.Drawing.Point(181, 3);
             this.Buscarcobrobutton.Name = "Buscarcobrobutton";
             this.Buscarcobrobutton.Size = new System.Drawing.Size(75, 42);
-            this.Buscarcobrobutton.TabIndex = 26;
+            this.Buscarcobrobutton.TabIndex = 1;
             this.Buscarcobrobutton.Text = "Buscar";
             this.Buscarcobrobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarcobrobutton.UseVisualStyleBackColor = true;
@@ -292,7 +298,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(296, 410);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 35);
-            this.Eliminarbutton.TabIndex = 25;
+            this.Eliminarbutton.TabIndex = 11;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -307,7 +313,7 @@
             this.Cobrarbutton.Location = new System.Drawing.Point(166, 410);
             this.Cobrarbutton.Name = "Cobrarbutton";
             this.Cobrarbutton.Size = new System.Drawing.Size(75, 35);
-            this.Cobrarbutton.TabIndex = 14;
+            this.Cobrarbutton.TabIndex = 9;
             this.Cobrarbutton.Text = "Cobrar";
             this.Cobrarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cobrarbutton.UseVisualStyleBackColor = true;
@@ -322,7 +328,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(36, 410);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 37);
-            this.Nuevobutton.TabIndex = 13;
+            this.Nuevobutton.TabIndex = 10;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -337,7 +343,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(453, 45);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 41);
-            this.Buscarbutton.TabIndex = 4;
+            this.Buscarbutton.TabIndex = 7;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;

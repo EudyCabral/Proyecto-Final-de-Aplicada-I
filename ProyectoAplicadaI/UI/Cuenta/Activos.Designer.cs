@@ -43,7 +43,7 @@
             capitalLabel.Location = new System.Drawing.Point(113, 25);
             capitalLabel.Name = "capitalLabel";
             capitalLabel.Size = new System.Drawing.Size(55, 24);
-            capitalLabel.TabIndex = 1;
+            capitalLabel.TabIndex = 2;
             capitalLabel.Text = "         ";
             capitalLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -54,7 +54,7 @@
             this.activolabel.Location = new System.Drawing.Point(101, 78);
             this.activolabel.Name = "activolabel";
             this.activolabel.Size = new System.Drawing.Size(18, 20);
-            this.activolabel.TabIndex = 3;
+            this.activolabel.TabIndex = 1;
             this.activolabel.Text = "$";
             // 
             // updatebutton
@@ -63,7 +63,7 @@
             this.updatebutton.Location = new System.Drawing.Point(101, 110);
             this.updatebutton.Name = "updatebutton";
             this.updatebutton.Size = new System.Drawing.Size(75, 36);
-            this.updatebutton.TabIndex = 4;
+            this.updatebutton.TabIndex = 0;
             this.updatebutton.UseVisualStyleBackColor = true;
             this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
             // 

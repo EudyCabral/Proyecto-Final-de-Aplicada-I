@@ -68,7 +68,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (ArticulosBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show("Esta Descripcion, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Nombre, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -94,7 +94,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (ArticulosBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Inventario, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -105,7 +105,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     filtro = x => true;
                     if (ArticulosBLL.GetList(filtro).Count() == 0)
                     {
-                        MessageBox.Show("Este Monto, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lista esta Vacia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     break;
@@ -163,7 +163,7 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
             else
             {
-                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }

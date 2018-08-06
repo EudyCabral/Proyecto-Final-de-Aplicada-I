@@ -18,15 +18,15 @@ namespace ProyectoAplicadaI
         private void Iniciarbutton_Click(object sender, EventArgs e)
         {
             Repositorio<Usuarios> usuarios = new Repositorio<Usuarios>(new Contexto());
-            //List<Usuarios> 
+          
             var Lista = usuarios.GetList(x => x.Usuario.Equals(UsuariotextBox.Text) && x.Contraseña.Equals(ClavetextBox.Text));
             Usuarios usuario = (Lista != null && Lista.Count > 0) ? Lista[0] : null;
 
             if (usuario != null)
             {
-                foreach (var item in BLL.UsuariosBLL.GetList(x => x.Usuario == UsuariotextBox.Text))
+                foreach (var item in UsuariosBLL.GetList(x => x.Usuario == UsuariotextBox.Text))
                 {
-                    BLL.ReciboBLL.NombreLogin(item.Nombre,item.Tipodeusuario);
+                    ReciboBLL.NombreLogin(item.Nombre,item.Tipodeusuario);
                 }
                 this.Hide();
                 Thread hilo = new Thread(Menu);
@@ -36,7 +36,7 @@ namespace ProyectoAplicadaI
             }
             else
             {
-                MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Contraseña y/o Usuario Incorrectos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ClavetextBox.Clear();
             }
 
@@ -55,7 +55,7 @@ namespace ProyectoAplicadaI
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
        

@@ -32,12 +32,12 @@ namespace ProyectoAplicadaI.UI.Cobro
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -80,7 +80,7 @@ namespace ProyectoAplicadaI.UI.Cobro
                     foreach (var item in BLL.ReciboBLL.GetList(filtro))
                     {
 
-                        deudatextBox.Text = (quincenas(item.Fecha,item.MontoTotal) - item.Abono).ToString();
+                        deudatextBox.Text = (BLL.CobroBLL.quincenas(item.Fecha,item.MontoTotal) - item.Abono).ToString();
                         AbonostextBox.Text = item.Abono.ToString();
 
                          DateTime FechaAct = fechaDateTimePicker.Value;
@@ -154,7 +154,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             PagosTextBox.ReadOnly = true;
         }
 
-
+/*
         private decimal quincenas(DateTime fecha, decimal monto)
         {
            
@@ -201,7 +201,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             }
           
             return monto;
-        }
+        }*/
         
         public void NoColumnas()
         {
@@ -259,8 +259,11 @@ namespace ProyectoAplicadaI.UI.Cobro
 
         private void Cobrarbutton_Click(object sender, EventArgs e)
         {
+            decimal deuda = Convert.ToDecimal(deudatextBox.Text);
+            decimal pago = Convert.ToDecimal(PagosTextBox.Text);
+         
             if (Validar(5))
-            { MessageBox.Show("Debe de Dijitar un Monto!", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            { MessageBox.Show("Debe de Dijitar un Monto!", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -269,6 +272,8 @@ namespace ProyectoAplicadaI.UI.Cobro
                 if (cobroIdNumericUpDown.Value == 0)
                 {
                     paso = BLL.CobroBLL.Guardar(Llenaclase());
+
+             
                 }
                 else
                 {
@@ -283,7 +288,7 @@ namespace ProyectoAplicadaI.UI.Cobro
                     else
                     {
                         MessageBox.Show("Id no existe", "Falló",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
 
@@ -321,7 +326,7 @@ namespace ProyectoAplicadaI.UI.Cobro
         {
             if (Validar(4))
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -345,7 +350,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             Buscarbutton.Enabled = false;
             if ( Validar(4))
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -362,7 +367,7 @@ namespace ProyectoAplicadaI.UI.Cobro
                 }
                 else
                 {
-                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                 }
                 GeneralerrorProvider.Clear();
@@ -380,7 +385,7 @@ namespace ProyectoAplicadaI.UI.Cobro
             foreach (var item in BLL.ReciboBLL.GetList(x => x.ReciboId == cobros.ReciboId))
             {
 
-                deudatextBox.Text = (quincenas(item.Fecha, item.MontoTotal) - item.Abono).ToString();
+                deudatextBox.Text = (BLL.CobroBLL.quincenas(item.Fecha, item.MontoTotal) - item.Abono).ToString();
                 AbonostextBox.Text = item.Abono.ToString();
 
 

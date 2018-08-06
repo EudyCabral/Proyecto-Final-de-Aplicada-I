@@ -17,7 +17,7 @@ namespace ProyectoAplicadaI.UI.Registros
             InitializeComponent();
             LlenaCombobox();
 
-            nombrelabel.Text = $"{ BLL.ReciboBLL.returnUsuario().Tipodeusuario}: {BLL.ReciboBLL.returnUsuario().Nombre }";
+            nombrelabel.Text = $"{ ReciboBLL.returnUsuario().Tipodeusuario}: {ReciboBLL.returnUsuario().Nombre }";
        
         }
 
@@ -142,7 +142,6 @@ namespace ProyectoAplicadaI.UI.Registros
             montoTextBox.Clear();
             montoTotalTextBox.Clear();
             DetalledataGridView.DataSource = null;
-            Recibobutton.Enabled = false;
             HayErrores.Clear();
         }
 
@@ -235,18 +234,18 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if(Validar(5))
             {
-                MessageBox.Show(" Combobox Vacio", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(" Combobox Vacio", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (Validar(4))
             {
-                MessageBox.Show(" LLene las Casillas Correspondiente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(" LLene las Casillas Correspondiente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
           
             if (Validar(3))
             {
-                MessageBox.Show(" Digite un Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(" Digite un Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -266,7 +265,7 @@ namespace ProyectoAplicadaI.UI.Registros
                      {
                          HayErrores.SetError(montoTextBox, "Error");
                          MessageBox.Show("No Hay esa Cantidad de Dinero Disponiblle!!", "Validación!!",
-                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                          return;
                      }
                
@@ -277,7 +276,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
                 if (string.IsNullOrEmpty(montoTextBox.Text) && string.IsNullOrEmpty(cantidadNumericUpDown.Text))
                 {
-                    MessageBox.Show(" Llene cantidad y Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(" Llene cantidad y Monto", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -390,7 +389,7 @@ namespace ProyectoAplicadaI.UI.Registros
             if (Validar(2))
             {
                 MessageBox.Show("Debe Agregar Algun Producto al Grid", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -400,7 +399,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
                     if (item.Activo < Convert.ToDecimal(montoTotalTextBox.Text))
                     {
-                        MessageBox.Show("La Compraventa No dispone de Esa Cantidad de dinero ", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La Compraventa No dispone de Esa Cantidad de dinero ", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -413,20 +412,34 @@ namespace ProyectoAplicadaI.UI.Registros
 
                 if (reciboIdNumericUpDown.Value == 0)
                 {
-                    Paso = BLL.ReciboBLL.Guardar(recibos);
+                    Paso = ReciboBLL.Guardar(recibos);
                     HayErrores.Clear();
                 }
                 else
                 {
-                    var V = BLL.ReciboBLL.Buscar(Convert.ToInt32(reciboIdNumericUpDown.Value));
+                    var V = ReciboBLL.Buscar(Convert.ToInt32(reciboIdNumericUpDown.Value));
 
                     if (V != null)
                     {
-                        Paso = BLL.ReciboBLL.Editar(recibos);
+                        Paso = ReciboBLL.Editar(recibos);
                     }
                     HayErrores.Clear();
                 }
 
+
+                if (MessageBox.Show("¿Desea Imprimir el Recibo?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+
+                    List<Recibos> list = ReciboBLL.GetList(X => true);
+
+                    List<Recibos> nuevo = new List<Recibos>();
+
+                    nuevo.Add(list.Last());
+
+                    VentanaReciboReporte abrir = new VentanaReciboReporte(nuevo);
+                    abrir.Show();
+
+                }
 
 
                 //Informar el resultado
@@ -436,7 +449,7 @@ namespace ProyectoAplicadaI.UI.Registros
                     MessageBox.Show("Guardado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Recibobutton.Enabled = true;
+                   
                 }
                 else
                     MessageBox.Show("No se pudo guardar!!", "Fallo",
@@ -450,13 +463,13 @@ namespace ProyectoAplicadaI.UI.Registros
             {
 
 
-                MessageBox.Show("Favor Llenar Casilla!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Favor Llenar Casilla!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
                 int id = Convert.ToInt32(reciboIdNumericUpDown.Value);
-                if (BLL.ReciboBLL.Eliminar(id))
+                if (ReciboBLL.Eliminar(id))
                 {
                     MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
@@ -469,30 +482,35 @@ namespace ProyectoAplicadaI.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(reciboIdNumericUpDown.Value);
-            Recibos recibos = BLL.ReciboBLL.Buscar(id);
+            Recibos recibos = ReciboBLL.Buscar(id);
 
             if (recibos != null)
             {
                 LlenaCampos(recibos);
 
+               
+                if (MessageBox.Show("¿Desea Imprimir el Recibo?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    
+              
+                    foreach (var item in  ReciboBLL.GetList(X => true))
+                    {
+                        if(item.ReciboId == reciboIdNumericUpDown.Value)
+                        {
+                            VentanaReciboReporte abrir = new VentanaReciboReporte(ReciboBLL.GetList(X => X.ReciboId == item.ReciboId));
+                            abrir.Show();
+
+                        }
+                    }
+                   
+                }
+
             }
             else
                 MessageBox.Show("No se encontro!", "Fallo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        private void Recibobutton_Click(object sender, EventArgs e)
-        {
-            List<Recibos> list = BLL.ReciboBLL.GetList(X=> true);
-
-            List<Recibos> nuevo = new List<Recibos>();
-
-            nuevo.Add( list.Last()); 
-            
-            VentanaReciboReporte abrir = new VentanaReciboReporte(nuevo);
-            abrir.Show();
-
-
+          
         }
 
       

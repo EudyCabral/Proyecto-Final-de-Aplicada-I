@@ -26,8 +26,103 @@ namespace BLL
 
         }
 
-       
+        public static decimal quincenas(DateTime fecha, decimal monto)
+        {
 
+
+            decimal res = 0;
+            var resultado = Math.Abs((fecha.Date - DateTime.Now.Date).TotalDays);
+
+            if (resultado <= 15)
+            {
+                res = monto * Convert.ToDecimal(0.05);
+                monto += res;
+
+
+            }
+
+            if (resultado >= 15 && resultado <= 30)
+            {
+                res = monto * Convert.ToDecimal(0.10);
+                monto += res;
+            }
+
+            if (resultado >= 30 && resultado <= 45)
+            {
+                res = monto * Convert.ToDecimal(0.15);
+                monto += res;
+            }
+
+            if (resultado >= 60 && resultado <= 75)
+            {
+                res = monto * Convert.ToDecimal(0.20);
+                monto += res;
+            }
+
+            if (resultado == 75 && resultado <= 90)
+            {
+                res = monto * Convert.ToDecimal(0.25);
+                monto += res;
+            }
+
+            if (resultado == 90 && resultado <= 95)
+            {
+                res = monto * Convert.ToDecimal(0.30);
+                monto += res;
+            }
+
+            return monto;
+        }
+
+
+
+        public static decimal Ganancia(DateTime fecha, decimal monto)
+        {
+
+
+            decimal res = 0;
+            var resultado = Math.Abs((fecha.Date - DateTime.Now.Date).TotalDays);
+
+            if (resultado <= 15)
+            {
+                res = monto * Convert.ToDecimal(0.05);
+                
+
+
+            }
+
+            if (resultado >= 15 && resultado <= 30)
+            {
+                res = monto * Convert.ToDecimal(0.10);
+               
+            }
+
+            if (resultado >= 30 && resultado <= 45)
+            {
+                res = monto * Convert.ToDecimal(0.15);
+           
+            }
+
+            if (resultado >= 60 && resultado <= 75)
+            {
+                res = monto * Convert.ToDecimal(0.20);
+         
+            }
+
+            if (resultado == 75 && resultado <= 90)
+            {
+                res = monto * Convert.ToDecimal(0.25);
+             
+            }
+
+            if (resultado == 90 && resultado <= 95)
+            {
+                res = monto * Convert.ToDecimal(0.30);
+           
+            }
+
+            return res;
+        }
         public static bool Guardar(Pagos cobro)
         {
             bool paso = false;
@@ -41,17 +136,28 @@ namespace BLL
 
                     contexto.recibos.Find(cobro.ReciboId).Abono += cobro.Abono;
 
-                    foreach (var item in BLL.ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
+                    foreach (var item in ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
                     {
                         contexto.recibos.Find(cobro.ReciboId).UltimaFechadeVigencia = item.UltimaFechadeVigencia.AddDays(AumentoDias(cobro.Abono,item.MontoTotal));
 
                       
                     }
-                    
-                  
+
+             
                     contexto.activodenegocio.Find(cobro.ActivodeNegocioId).Activo += cobro.Abono;
 
+                   
+
                     contexto.SaveChanges();
+
+                    foreach (var item in ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
+                    {
+                        if ((item.MontoTotal + Ganancia(item.Fecha, item.MontoTotal)) - item.Abono  == 0)
+                        {
+                            ReciboBLL.EliminarParaCobro(cobro.ReciboId);
+                        }
+
+                    }
                     paso = true;
                 }
                 contexto.Dispose();
@@ -79,7 +185,7 @@ namespace BLL
 
 
 
-                    foreach (var item in BLL.ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
+                    foreach (var item in ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
                     {
                         contexto.recibos.Find(cobro.ReciboId).UltimaFechadeVigencia = item.UltimaFechadeVigencia.AddDays(-AumentoDias(cobro.Abono, item.MontoTotal));
                     }
@@ -127,7 +233,7 @@ namespace BLL
                 decimal otradif = Anterior.Abono - cobro.Abono;
 
 
-                Recibos recibos = BLL.ReciboBLL.Buscar(cobro.ReciboId);
+                Recibos recibos = ReciboBLL.Buscar(cobro.ReciboId);
               recibos.Abono = Math.Abs(recibos.Abono-diferencia);
 
                 ActivodeNegocio negocio = BLL.ActivodeNegocioBLL.Buscar(cobro.ActivodeNegocioId);
@@ -146,8 +252,19 @@ namespace BLL
                recibos.UltimaFechadeVigencia = recibos.UltimaFechadeVigencia.AddDays(-AumentoDias(Anterior.Abono, recibos.MontoTotal));
                 recibos.UltimaFechadeVigencia = recibos.UltimaFechadeVigencia.AddDays(AumentoDias(cobro.Abono, recibos.MontoTotal));
 
-                BLL.ReciboBLL.ModEspecial(recibos);
-                BLL.ActivodeNegocioBLL.Editar(negocio);
+                ReciboBLL.ModEspecial(recibos);
+                ActivodeNegocioBLL.Editar(negocio);
+
+
+                foreach (var item in ReciboBLL.GetList(x => x.ReciboId == cobro.ReciboId))
+                {
+                    if ((item.MontoTotal + Ganancia(item.Fecha, item.MontoTotal)) - item.Abono == 0)
+                    {
+                        ReciboBLL.EliminarParaCobro(cobro.ReciboId);
+          
+                    }
+
+                }
 
                 contexto.Entry(cobro).State = EntityState.Modified;
 

@@ -16,6 +16,7 @@ namespace ENTIDADES
         public decimal MontoTotal { get; set; }
         public decimal Abono { get; set; }
         public DateTime UltimaFechadeVigencia { get; set; }
+        
 
         public virtual ICollection<ReciboDetalles> Detalle { get; set; }
 
@@ -30,6 +31,7 @@ namespace ENTIDADES
             MontoTotal = 0;
             Abono = 0;
             UltimaFechadeVigencia = DateTime.Now;
+         
         }
 
         public void AgregarDetalle(int iD, int reciboId,int articuloId,string articulo, string descripcion, int cantidad, decimal monto)

@@ -31,6 +31,24 @@ namespace ProyectoAplicadaI.UI.Registros
                 GeneralerrorProvider.SetError(direccionTextBox, "Llene Direccion");
                 errores = true;
             }
+            
+            if(error ==2 && cedulaMaskedTextBox.MaskFull == false)
+            {
+
+               GeneralerrorProvider.SetError(cedulaMaskedTextBox, "Completar los campos");
+
+               errores = true;
+
+            }
+
+            if (error == 2 && telefonoMaskedTextBox.MaskFull == false)
+            {
+
+                GeneralerrorProvider.SetError(telefonoMaskedTextBox, "Completar los campos");
+
+                errores = true;
+
+            }
 
             if (error == 2 && string.IsNullOrWhiteSpace(cedulaMaskedTextBox.Text))
             {
@@ -93,13 +111,13 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (validar(3))
             {
-                MessageBox.Show("Favor Dijite un Nombre");
+                MessageBox.Show("Favor Dijite un Nombre","Validacion",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
 
             if (validar(2))
             {
-                MessageBox.Show("Favor de Llenar las Casillas");
+                MessageBox.Show("Favor de Llenar las Casillas Correctamente", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -117,8 +135,11 @@ namespace ProyectoAplicadaI.UI.Registros
                         paso = BLL.ClienteBLL.Editar(clientes);
                     }
                     else
+                    {
                         MessageBox.Show("Id no existe", "Falló",
-                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
 
 
@@ -139,8 +160,8 @@ namespace ProyectoAplicadaI.UI.Registros
             {
                 if (validar(1))
                 {
-                    MessageBox.Show("Favor de Llenar Casilla para poder Buscar");
-                }
+                    MessageBox.Show("Favor de Llenar Casilla para poder Buscar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
                 else
                 {
                     int id = Convert.ToInt32(clienteIdNumericUpDown.Value);
@@ -167,8 +188,8 @@ namespace ProyectoAplicadaI.UI.Registros
             {
                 if (validar(1))
                 {
-                    MessageBox.Show("Favor de Llenar casilla para poder Eliminar");
-                }
+                    MessageBox.Show("Favor de Llenar casilla para poder Eliminar", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
                 else
                 {
                     int id = Convert.ToInt32(clienteIdNumericUpDown.Value);
@@ -190,5 +211,6 @@ namespace ProyectoAplicadaI.UI.Registros
             {
                  Limpiar();
             }
-        
-}   }
+
+       
+    }   }

@@ -15,6 +15,7 @@ namespace ProyectoAplicadaI.UI.Consultas
         public ConsultadeArticulosEmpeñados()
         {
             InitializeComponent();
+           
         }
 
         Expression<Func<ReciboDetalles, bool>> filtro = x => true;
@@ -31,12 +32,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -63,12 +64,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -81,7 +82,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -91,12 +92,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar un Nombre de Articulo!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Nombre de Articulo!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -107,7 +108,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                        
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -137,7 +138,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -168,7 +169,7 @@ namespace ProyectoAplicadaI.UI.Consultas
                     
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -199,7 +200,7 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                         if (BLL.ReciboDetallesBLL.GetList(filtro).Count() == 0)
                         {
-                            MessageBox.Show(" No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
@@ -222,7 +223,9 @@ namespace ProyectoAplicadaI.UI.Consultas
 
             if (FiltrocomboBox.SelectedItem != null)
             {
+              
                RecibodataGridView.DataSource = BLL.ReciboDetallesBLL.GetList(filtro);
+              
                 CriteriotextBox.Clear();
                 GeneralerrorProvider.Clear();
                 RecibodataGridView.Columns["articulos"].Visible = false;

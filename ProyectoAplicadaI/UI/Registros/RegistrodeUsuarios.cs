@@ -98,7 +98,7 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar");
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar","Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -131,7 +131,7 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar casilla para poder Eliminar");
+                MessageBox.Show("Favor de Llenar casilla para poder Eliminar","Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -160,12 +160,12 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (validar(3))
             {
-                MessageBox.Show("Favor Dijite un Nombre");
+                MessageBox.Show("Favor Dijite un Nombre","Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (validar(4))
             {
-                MessageBox.Show("La Contraseña no son Iguales","Validacion");
+                MessageBox.Show("La Contraseña no son Iguales","Validacion",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 contraseñaTextBox.Clear();
                 ConfirmartextBox.Clear();
                 return;
@@ -173,7 +173,7 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (validar(2))
             {
-                MessageBox.Show("Favor de Llenar las Casillas");
+                MessageBox.Show("Favor de Llenar las Casillas", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

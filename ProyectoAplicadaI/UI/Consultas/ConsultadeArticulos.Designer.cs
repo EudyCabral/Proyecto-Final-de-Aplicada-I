@@ -92,6 +92,7 @@
             // GeneralerrorProvider
             // 
             this.GeneralerrorProvider.ContainerControl = this;
+            this.GeneralerrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("GeneralerrorProvider.Icon")));
             // 
             // Imprimirbutton
             // 

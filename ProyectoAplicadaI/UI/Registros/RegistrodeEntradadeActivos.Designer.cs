@@ -57,7 +57,7 @@
             entradadeActivosIdLabel.Location = new System.Drawing.Point(15, 16);
             entradadeActivosIdLabel.Name = "entradadeActivosIdLabel";
             entradadeActivosIdLabel.Size = new System.Drawing.Size(109, 13);
-            entradadeActivosIdLabel.TabIndex = 1;
+            entradadeActivosIdLabel.TabIndex = 8;
             entradadeActivosIdLabel.Text = "Entradade Activos Id:";
             // 
             // fechaLabel
@@ -66,7 +66,7 @@
             fechaLabel.Location = new System.Drawing.Point(16, 52);
             fechaLabel.Name = "fechaLabel";
             fechaLabel.Size = new System.Drawing.Size(40, 13);
-            fechaLabel.TabIndex = 3;
+            fechaLabel.TabIndex = 9;
             fechaLabel.Text = "Fecha:";
             // 
             // motivoLabel
@@ -75,7 +75,7 @@
             motivoLabel.Location = new System.Drawing.Point(14, 86);
             motivoLabel.Name = "motivoLabel";
             motivoLabel.Size = new System.Drawing.Size(42, 13);
-            motivoLabel.TabIndex = 7;
+            motivoLabel.TabIndex = 10;
             motivoLabel.Text = "Motivo:";
             // 
             // sumaLabel
@@ -84,15 +84,20 @@
             sumaLabel.Location = new System.Drawing.Point(14, 122);
             sumaLabel.Name = "sumaLabel";
             sumaLabel.Size = new System.Drawing.Size(37, 13);
-            sumaLabel.TabIndex = 9;
+            sumaLabel.TabIndex = 11;
             sumaLabel.Text = "Suma:";
             // 
             // entradadeActivosIdNumericUpDown
             // 
             this.entradadeActivosIdNumericUpDown.Location = new System.Drawing.Point(130, 12);
+            this.entradadeActivosIdNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.entradadeActivosIdNumericUpDown.Name = "entradadeActivosIdNumericUpDown";
             this.entradadeActivosIdNumericUpDown.Size = new System.Drawing.Size(123, 20);
-            this.entradadeActivosIdNumericUpDown.TabIndex = 2;
+            this.entradadeActivosIdNumericUpDown.TabIndex = 0;
             // 
             // fechaDateTimePicker
             // 
@@ -100,25 +105,26 @@
             this.fechaDateTimePicker.Location = new System.Drawing.Point(130, 48);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(123, 20);
-            this.fechaDateTimePicker.TabIndex = 4;
+            this.fechaDateTimePicker.TabIndex = 1;
             // 
             // motivoTextBox
             // 
             this.motivoTextBox.Location = new System.Drawing.Point(129, 83);
             this.motivoTextBox.Name = "motivoTextBox";
             this.motivoTextBox.Size = new System.Drawing.Size(124, 20);
-            this.motivoTextBox.TabIndex = 8;
+            this.motivoTextBox.TabIndex = 2;
             // 
             // sumaTextBox
             // 
             this.sumaTextBox.Location = new System.Drawing.Point(129, 118);
             this.sumaTextBox.Name = "sumaTextBox";
             this.sumaTextBox.Size = new System.Drawing.Size(124, 20);
-            this.sumaTextBox.TabIndex = 10;
+            this.sumaTextBox.TabIndex = 3;
             // 
             // GeneralerrorProvider
             // 
             this.GeneralerrorProvider.ContainerControl = this;
+            this.GeneralerrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("GeneralerrorProvider.Icon")));
             // 
             // Eliminarbutton
             // 
@@ -129,7 +135,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(226, 157);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 34);
-            this.Eliminarbutton.TabIndex = 22;
+            this.Eliminarbutton.TabIndex = 7;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -144,7 +150,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(120, 157);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(81, 34);
-            this.Guardarbutton.TabIndex = 21;
+            this.Guardarbutton.TabIndex = 4;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -159,7 +165,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(14, 157);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 34);
-            this.Nuevobutton.TabIndex = 20;
+            this.Nuevobutton.TabIndex = 6;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -174,7 +180,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(259, 2);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 40);
-            this.Buscarbutton.TabIndex = 19;
+            this.Buscarbutton.TabIndex = 5;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;

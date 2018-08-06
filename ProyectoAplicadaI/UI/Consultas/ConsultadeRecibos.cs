@@ -14,6 +14,7 @@ namespace ProyectoAplicadaI.UI.Consultas
         {
             InitializeComponent();
         }
+
         Expression<Func<Recibos, bool>> filtro = x => true;
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
@@ -25,12 +26,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -64,12 +65,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -97,12 +98,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -135,12 +136,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Monto!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Monto!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -183,6 +184,8 @@ namespace ProyectoAplicadaI.UI.Consultas
             if (FiltrocomboBox.SelectedItem != null)
             {
                 RecibodataGridView.DataSource = BLL.ReciboBLL.GetList(filtro);
+              //  RecibodataGridView.Columns.Add("estado", "Estado");
+
                 CriteriotextBox.Clear();
                 GeneralerrorProvider.Clear();
                 RecibodataGridView.Columns["ActivodeNegocioId"].Visible = false;
@@ -253,7 +256,7 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
             else
             {
-                MessageBox.Show("No Hay Nada dentro del Grid", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No Hay Nada dentro del Grid", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

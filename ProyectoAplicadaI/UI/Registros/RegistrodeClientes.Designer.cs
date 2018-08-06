@@ -60,7 +60,7 @@
             clienteIdLabel.Location = new System.Drawing.Point(17, 16);
             clienteIdLabel.Name = "clienteIdLabel";
             clienteIdLabel.Size = new System.Drawing.Size(54, 13);
-            clienteIdLabel.TabIndex = 1;
+            clienteIdLabel.TabIndex = 9;
             clienteIdLabel.Text = "Cliente Id:";
             // 
             // nombreLabel
@@ -69,7 +69,7 @@
             nombreLabel.Location = new System.Drawing.Point(17, 50);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 3;
+            nombreLabel.TabIndex = 10;
             nombreLabel.Text = "Nombre:";
             // 
             // cedulaLabel
@@ -78,7 +78,7 @@
             cedulaLabel.Location = new System.Drawing.Point(19, 83);
             cedulaLabel.Name = "cedulaLabel";
             cedulaLabel.Size = new System.Drawing.Size(43, 13);
-            cedulaLabel.TabIndex = 5;
+            cedulaLabel.TabIndex = 11;
             cedulaLabel.Text = "Cedula:";
             // 
             // direccionLabel
@@ -87,7 +87,7 @@
             direccionLabel.Location = new System.Drawing.Point(17, 116);
             direccionLabel.Name = "direccionLabel";
             direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 7;
+            direccionLabel.TabIndex = 12;
             direccionLabel.Text = "Direccion:";
             // 
             // telefonoLabel
@@ -96,7 +96,7 @@
             telefonoLabel.Location = new System.Drawing.Point(19, 182);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 9;
+            telefonoLabel.TabIndex = 13;
             telefonoLabel.Text = "Telefono:";
             // 
             // clienteIdNumericUpDown
@@ -109,14 +109,14 @@
             0});
             this.clienteIdNumericUpDown.Name = "clienteIdNumericUpDown";
             this.clienteIdNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.clienteIdNumericUpDown.TabIndex = 2;
+            this.clienteIdNumericUpDown.TabIndex = 0;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.Location = new System.Drawing.Point(77, 46);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(146, 20);
-            this.nombreTextBox.TabIndex = 4;
+            this.nombreTextBox.TabIndex = 1;
             // 
             // cedulaMaskedTextBox
             // 
@@ -124,7 +124,7 @@
             this.cedulaMaskedTextBox.Mask = "000-0000000-0";
             this.cedulaMaskedTextBox.Name = "cedulaMaskedTextBox";
             this.cedulaMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cedulaMaskedTextBox.TabIndex = 6;
+            this.cedulaMaskedTextBox.TabIndex = 2;
             // 
             // direccionTextBox
             // 
@@ -132,7 +132,7 @@
             this.direccionTextBox.Multiline = true;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(120, 53);
-            this.direccionTextBox.TabIndex = 8;
+            this.direccionTextBox.TabIndex = 3;
             // 
             // telefonoMaskedTextBox
             // 
@@ -140,11 +140,12 @@
             this.telefonoMaskedTextBox.Mask = "000-000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.telefonoMaskedTextBox.TabIndex = 10;
+            this.telefonoMaskedTextBox.TabIndex = 4;
             // 
             // GeneralerrorProvider
             // 
             this.GeneralerrorProvider.ContainerControl = this;
+            this.GeneralerrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("GeneralerrorProvider.Icon")));
             // 
             // Eliminarbutton
             // 
@@ -155,7 +156,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(235, 214);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 34);
-            this.Eliminarbutton.TabIndex = 14;
+            this.Eliminarbutton.TabIndex = 8;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -170,7 +171,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(124, 214);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(86, 34);
-            this.Guardarbutton.TabIndex = 13;
+            this.Guardarbutton.TabIndex = 5;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -185,7 +186,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(24, 214);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 34);
-            this.Nuevobutton.TabIndex = 12;
+            this.Nuevobutton.TabIndex = 7;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -200,7 +201,7 @@
             this.Buscarbutton.Location = new System.Drawing.Point(219, 3);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(82, 39);
-            this.Buscarbutton.TabIndex = 11;
+            this.Buscarbutton.TabIndex = 6;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;

@@ -24,12 +24,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(2))
                     {
-                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Numero!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -51,12 +51,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar un Nombre!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -80,12 +80,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar la Cedula con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar la Cedula con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -104,12 +104,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar el telefono con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar el telefono con sus Guiones!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -130,12 +130,12 @@ namespace ProyectoAplicadaI.UI.Consultas
 
                     if (Validar(1))
                     {
-                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (Validar(3))
                     {
-                        MessageBox.Show("Debe Digitar una Direccion!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe Digitar una Direccion!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
@@ -215,7 +215,7 @@ namespace ProyectoAplicadaI.UI.Consultas
             }
             else
             {
-                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion");
+                MessageBox.Show("Grid esta Vacio, No puede hacer se un Reporte ", "Validacion",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
         }

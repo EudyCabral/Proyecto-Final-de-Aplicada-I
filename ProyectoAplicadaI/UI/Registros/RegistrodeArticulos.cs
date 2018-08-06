@@ -76,7 +76,7 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar casilla para poder Eliminar");
+                MessageBox.Show("Favor de Llenar casilla para poder Eliminar", "Validar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -101,7 +101,7 @@ namespace ProyectoAplicadaI.UI.Registros
         {
             if (validar(1))
             {
-                MessageBox.Show("Favor de Llenar Casilla para poder Buscar");
+                MessageBox.Show("Favor de Llenar Casilla para poder Buscar", "Validar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -117,7 +117,7 @@ namespace ProyectoAplicadaI.UI.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No Fue Encontrado!", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 GeneralerrorProvider.Clear();
             }
@@ -140,12 +140,12 @@ namespace ProyectoAplicadaI.UI.Registros
 
             if (validar(3))
             {
-                MessageBox.Show("Favor Dijite un Nombre");
+                MessageBox.Show("Favor Dijite un Nombre","Validar",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
             if (validar(2))
             {
-                MessageBox.Show("Favor de Llenar las Casillas");
+                MessageBox.Show("Favor de Llenar las Casillas", "Validar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -164,7 +164,7 @@ namespace ProyectoAplicadaI.UI.Registros
                     }
                     else
                         MessageBox.Show("Id no existe", "Falló",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 

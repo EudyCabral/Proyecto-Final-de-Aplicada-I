@@ -3,6 +3,7 @@ using DAL;
 using ENTIDADES;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -11,7 +12,8 @@ namespace BLL
     public class ReciboDetallesBLL
     {
 
-     
+        
+
         public static List<ReciboDetalles> GetList(Expression<Func<ReciboDetalles, bool>> expression)
         {
             List<ReciboDetalles> recibos = new List<ReciboDetalles>();
